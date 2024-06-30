@@ -1,0 +1,1134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-11 20:28+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+#: .\sh\settings.py:121
+msgid "English"
+msgstr "English"
+
+#: .\sh\settings.py:122
+msgid "Russian"
+msgstr "Русский"
+
+#: .\sh\settings.py:123
+msgid "Ukrainian"
+msgstr "Український"
+
+#: .\cat\templates\cat\base.html:392
+msgid "Доставка и оплата"
+msgstr "Delivery and payment"
+
+#: .\cat\templates\cat\base.html:441
+msgid "Каталог"
+msgstr "Catalog"
+
+#: .\cat\templates\cat\base.html:441
+msgid "Найти"
+msgstr "Search"
+
+#: .\cat\templates\cat\base.html:494
+msgid "Поиск на сайте"
+msgstr "Search on the site"
+
+#: .\cat\templates\cat\base.html:576
+msgid "Договор оферты"
+msgstr "The offer Agreement"
+
+#: .\cat\templates\cat\base.html:577
+msgid "Политика конфиденциальности"
+msgstr "Privacy policy"
+
+#: .\cat\templates\cat\base.html:578
+msgid "Положение о персональных данных"
+msgstr "Regulation on personal data"
+
+#: .\cat\templates\cat\detail.html:30
+msgid "Заказать продукт"
+msgstr "Order a product"
+
+#: .\cat\templates\cat\detail.html:35
+msgid "Ваше имя"
+msgstr "Your name"
+
+#: .\cat\templates\cat\detail.html:40
+msgid "Телефон"
+msgstr "Telephone"
+
+#: .\cat\templates\cat\detail.html:45
+msgid "Почта"
+msgstr "Mail"
+
+#: .\cat\templates\cat\detail.html:55
+msgid "Цена"
+msgstr "Price"
+
+#: .\cat\templates\cat\detail.html:65
+msgid "Отправить"
+msgstr "Send"
+
+#: .\cat\templates\cat\detail.html:67
+msgid "Продолжая, вы соглашаетесь с"
+msgstr "By continuing, you agree to"
+
+#: .\cat\templates\cat\detail.html:67
+msgid "политикой конфиденциальности."
+msgstr "the privacy policy."
+
+#: .\cat\templates\cat\detail.html:128
+msgid "Артикул"
+msgstr "Article"
+
+#: .\cat\templates\cat\detail.html:144
+msgid "Быстрый заказ"
+msgstr "Quick order"
+
+#: .\cat\templates\cat\detail.html:152
+msgid "Алгоритм"
+msgstr "Algorithm"
+
+#: .\cat\templates\cat\detail.html:156
+msgid "Доходность в день"
+msgstr "Yield per day"
+
+#: .\cat\templates\cat\detail.html:160
+msgid "Энергопотребление"
+msgstr "Energy consumption"
+
+#: .\cat\templates\cat\detail.html:164
+msgid "Доходность в месяц"
+msgstr "Profitability per month"
+
+#: .\cat\templates\cat\detail.html:168
+msgid "Криптовалюта"
+msgstr "Cryptocurrency"
+
+#: .\cat\templates\cat\detail.html:172
+msgid "Окупаемость"
+msgstr "Payback period"
+
+#: .\cat\templates\cat\detail.html:172
+msgid "мес"
+msgstr "month"
+
+#: .\cat\templates\cat\detail.html:177
+msgid "Добавить в избранное"
+msgstr "Add to Favorites"
+
+#: .\cat\templates\cat\detail.html:246
+msgid "Обзор"
+msgstr "Review"
+
+#: .\cat\templates\cat\detail.html:247
+msgid "Характеристики"
+msgstr "Specifications"
+
+#: .\cat\templates\cat\detail.html:248
+msgid "Вопросы и ответы"
+msgstr "Questions and answers"
+
+#: .\cat\templates\cat\detail.html:257
+msgid "О товаре"
+msgstr "About the product"
+
+#: .\cat\templates\cat\detail.html:265
+msgid "Какую криптовалюту можно добывать"
+msgstr "What kind of cryptocurrency can be mined"
+
+#: .\cat\templates\cat\detail.html:273
+msgid "Особенности оборудования"
+msgstr "Features of the equipment"
+
+#: .\cat\templates\cat\detail.html:281
+msgid "О производителе"
+msgstr "About the manufacturer"
+
+#: .\cat\templates\cat\detail.html:297
+msgid "Производитель"
+msgstr "Manufacturer"
+
+#: .\cat\templates\cat\detail.html:301
+msgid "Модель"
+msgstr "Model"
+
+#: .\cat\templates\cat\detail.html:309
+msgid "Хэшрейт"
+msgstr "Hashrate"
+
+#: .\cat\templates\cat\detail.html:325
+msgid "Рабочая температура"
+msgstr "Operating temperature"
+
+#: .\cat\templates\cat\detail.html:329
+msgid "Источник питания"
+msgstr "Power supply"
+
+#: .\cat\templates\cat\detail.html:333
+msgid "Охлаждение"
+msgstr "Cooling"
+
+#: .\cat\templates\cat\detail.html:337
+msgid "Размер"
+msgstr "Size"
+
+#: .\cat\templates\cat\detail.html:341
+msgid "Уровень шума"
+msgstr "Noise level"
+
+#: .\cat\templates\cat\detail.html:355
+msgid "Оставить заявку"
+msgstr "Submit your application"
+
+#: .\cat\templates\cat\detail.html:367
+msgid "Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфиденциальности."
+msgstr "By clicking the button, you accept the procedure for processing personal data described in our privacy policy."
+
+#: .\cat\templates\cat\detail.html:387
+msgid "Написать сообщение"
+msgstr "Write a message"
+
+#: .\cat\templates\cat\detail_stabilizer.html:68
+msgid "политикой конфиденциальности"
+msgstr "privacy policy"
+
+#: .\cat\templates\cat\detail_stabilizer.html:162
+msgid "Все характеристики"
+msgstr "All the characteristics"
+
+#: .\cat\templates\cat\detail_stabilizer.html:251
+msgid "Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфиденциальности"
+msgstr "By clicking the button, you accept the procedure for processing personal data described in our privacy policy"
+
+#: .\cat\templates\cat\faivorit.html:13
+msgid "Избранное"
+msgstr "Favourites"
+
+#: .\cat\templates\cat\faivorit.html:14
+msgid "Вы выбрали"
+msgstr "You have chosen"
+
+#: .\cat\templates\cat\faivorit.html:14
+msgid "модели"
+msgstr "models"
+
+#: .\cat\templates\cat\faivorit.html:34
+msgid "Хешрейт"
+msgstr "Hashrate"
+
+#: .\cat\templates\cat\faivorit.html:40
+msgid "Вт"
+msgstr "W"
+
+#: .\cat\templates\cat\faivorit.html:50
+msgid "Заказать"
+msgstr "Order"
+
+#: .\cat\templates\cat\home.html:52
+msgid "Бренд"
+msgstr "Brand"
+
+#: .\cat\templates\cat\home.html:75
+msgid "Монета"
+msgstr "Coin"
+
+#: .\cat\templates\cat\home.html:102
+msgid "Потребление"
+msgstr "Consumption"
+
+#: .\cat\templates\cat\home.html:124
+msgid "Применить"
+msgstr "Apply"
+
+#: .\cat\templates\cat\home.html:138
+msgid "майнеры"
+msgstr "miners"
+
+#: .\cat\templates\cat\home.html:139
+msgid "товара"
+msgstr "product"
+
+#: .\cat\templates\cat\home.html:160
+msgid "ASIC для майнинга Bitcoin"
+msgstr "ASIC for Bitcoin Mining"
+
+#: .\cat\templates\cat\home.html:161
+msgid "ASIC для майнинга LTC / DOGE"
+msgstr "ASIC for LTC / DOGE mining"
+
+#: .\cat\templates\cat\home.html:162
+msgid "Мощные асики"
+msgstr "Powerful asics"
+
+#: .\cat\templates\cat\home.html:163
+msgid "Сбросить фильтры"
+msgstr "Reset Filters"
+
+#: .\cat\templates\cat\home.html:172
+msgid "Фильтры"
+msgstr "Filters"
+
+#: .\cat\templates\cat\home.html:287
+msgid "По вашему запросу ничего не найдено."
+msgstr "Nothing was found for your query."
+
+#: .\cat\templates\cat\home_stab.html:152
+msgid "Стабилизаторы"
+msgstr "Stabilizers"
+
+#: .\cat\templates\cat\home_stab.html:153
+msgid "товарa"
+msgstr "product"
+
+#: .\cat\templates\cat\home_stab.html:174
+msgid "Однофазные"
+msgstr "Single-phase"
+
+#: .\cat\templates\cat\home_stab.html:175
+msgid "Трёхфазные"
+msgstr "Three-phase"
+
+#: .\cat\templates\cat\home_stab.html:176
+msgid "По убыванию цены"
+msgstr "In descending order of price"
+
+#: .\cat\templates\cat\home_stab.html:177
+msgid "По возрастанию цены"
+msgstr "In ascending order of price"
+
+#: .\cat\templates\cat\home_stab.html:301
+msgid "По вашему запросу ничего не найдено"
+msgstr "Nothing was found for your query"
+
+#: .\cat\templates\cat\home_stab.html:323
+msgid "Кол-во. фаз"
+msgstr "Number of phases"
+
+#: .\cat\templates\cat\thanks.html:46
+msgid "Спасибо за обращение"
+msgstr "Thank you for contacting us"
+
+#: .\cat\templates\cat\thanks.html:47
+msgid "С вами свяжется менеджер в ближайшее время, а пока можете продолжить выбирать товар"
+msgstr "The manager will contact you soon, but in the meantime you can continue to choose the product"
+
+#: .\cat\templates\cat\thanks.html:53
+msgid "Назад"
+msgstr "Back"
+
+#: .\cat\templates\includes\header_links.html:3
+msgid "О компании"
+msgstr "About the company"
+
+#: .\cat\templates\includes\header_links.html:6
+msgid "О заказе"
+msgstr "About the order"
+
+#: .\cat\templates\includes\header_links.html:7
+msgid "Проверить гарантию"
+msgstr "Check the warranty"
+
+#: .\cat\templates\includes\header_links.html:8
+msgid "Размещение"
+msgstr "Placement"
+
+#: .\cat\templates\includes\header_links.html:9
+msgid "Блог"
+msgstr "Blog"
+
+#: .\cat\templates\includes\header_links.html:10
+msgid "Контакты"
+msgstr "Contacts"
+
+#: .\cat\templates\includes\slider_about.html:62
+msgid "Мы поставляем только новое обородувание с гарантией"
+msgstr "We only supply new equipment with a guarantee"
+
+#: .\cat\templates\includes\slider_about.html:64
+msgid "Можете быть полностью уверенны в сохранности и исправности поставляемого нами оборудования, так-как мы сопровождаем груз на всех этапах — от склада до пункта назначения"
+msgstr "You can be completely confident in the safety and serviceability of the equipment supplied by us, as we accompany the cargo at all stages - from the warehouse to the destination"
+
+#: .\cat\templates\includes\slider_about.html:68
+msgid "На наш взгляд одними из главных факторов являются демократичные цены на всё оборудование и услуги которые мы предоставляем"
+msgstr "In our opinion, one of the main factors is the affordable prices for all the equipment and services that we provide"
+
+#: .\cat\templates\includes\slider_razmecenie.html:60
+msgid "Лучшие условия для оборудования"
+msgstr "The best conditions for equipment"
+
+#: .\cat\templates\includes\slider_razmecenie.html:61
+msgid "В"
+msgstr "IN"
+
+#: .\cat\templates\includes\slider_razmecenie.html:61
+msgid "НАШИХ ДАТА ЦЕНТРАХ СОЗДАНЫ ИДЕАЛЬНЫЕ УСЛОВИЯ ДЛЯ РАБОТЫ МАЙНИНГ-ОБОРУДОВАНИЯ. ВАМ НЕ ПРИДЁТСЯ СТАВИТЬ ШУМНЫЕ, БЫСТРО НАГРЕВАЮЩИЕСЯ АСИКИ НА БАЛКОНЕ ИЛИ В ПЫЛЬНЫХ, ДАЧНЫХ ХОЗЯЙСТВЕННЫХ ПОМЕЩЕНИЯХ НЕ ПРЕДНАЗНАЧЕННЫХ ДЛЯ МАЙНИНГА"
+msgstr "OUR DATA CENTERS HAVE CREATED IDEAL CONDITIONS FOR THE OPERATION OF MINING EQUIPMENT. YOU WILL NOT HAVE TO INSTALL NOISY, RAPIDLY HEATING ASICS ON THE BALCONY OR IN DUSTY, SUBURBAN UTILITY ROOMS NOT INTENDED FOR MINING"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#: .\main_sh\templates\main_sh\about.html:18
+msgid "ЦОД в Норильскe Красноярский край"
+msgstr "Data center in Norilsk, Krasnoyarsk Territory"
+
+#: .\main_sh\templates\main_sh\about.html:23
+msgid "Стоимость"
+msgstr "Cost"
+
+#: .\main_sh\templates\main_sh\about.html:24
+msgid "5,35₽/кВт"
+msgstr "5,35₽/кВт"
+
+#: .\main_sh\templates\main_sh\about.html:33
+msgid "Свободное место"
+msgstr "Free space"
+
+#: .\main_sh\templates\main_sh\about.html:34
+msgid "750кВт"
+msgstr "750кВт"
+
+#: .\main_sh\templates\main_sh\about.html:38
+msgid "Локация"
+msgstr "Location"
+
+#: .\main_sh\templates\main_sh\about.html:39
+msgid "Норильск"
+msgstr "Norilsk"
+
+#: .\main_sh\templates\main_sh\about.html:61
+msgid "Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфеденциальности"
+msgstr "By clicking the button, you accept the procedure for processing personal data described in our privacy policy"
+
+#: .\main_sh\templates\main_sh\about.html:166
+msgid "Немного о нас"
+msgstr "A little bit about us"
+
+#: .\main_sh\templates\main_sh\about.html:173
+msgid "Наша компания специализируется на поставке майнинг оборудования под ключ, обеспечивая надежность и поддержку на всех этапах майнинга. Опыт позволяет не только предоставлять качественное оборудование, но и помогать клиентам понять, как максимально эффективно использовать его потенциал. Предлагая услуги, начиная с оценки потребностей клиентов и заканчивая технической поддержкой в эксплуатации майнеров. Наши менеджеры предоставляют экспертную консультацию и осуществляют индивидуальный подбор оборудования, учитывая ваши требования и цели. У нас вы сможете приобрести майнеры по выгодной цене, так же если у вас есть проблемы с сетью на локации, вы сможете вместе с майнерами купить стабилизатор напряжения. Или если на предполагаемой локации цена за кВТ/час слишком высокая, Вы можете разместить купленное оборудование в наших дата центрах"
+msgstr "Our company specializes in the supply of turnkey mining equipment, providing reliability and support at all stages of mining. The experience allows us not only to provide high-quality equipment, but also to help customers understand how to maximize its potential. Offering services ranging from customer needs assessment to technical support in the operation of miners. Our managers provide expert advice and carry out an individual selection of equipment, taking into account your requirements and goals. Here you can buy miners at a bargain price, as well as if you have problems with the network at the location, you can buy a voltage stabilizer together with the miners. Or if the price per kWh is too high at the intended location, you can place the purchased equipment in our data centers"
+
+#: .\main_sh\templates\main_sh\about.html:181
+msgid "Поставщик #1"
+msgstr "Supplier #1"
+
+#: .\main_sh\templates\main_sh\about.html:196
+msgid "Уже 1500+ довольных клиентов"
+msgstr "Already 1500+ satisfied customers"
+
+#: .\main_sh\templates\main_sh\about.html:202
+msgid "Все новости"
+msgstr "All the news"
+
+#: .\main_sh\templates\main_sh\about.html:210
+msgid "Что мы делаем"
+msgstr "What are we doing"
+
+#: .\main_sh\templates\main_sh\about.html:210
+msgid "что бы быть #1?"
+msgstr "to be the #1?"
+
+#: .\main_sh\templates\main_sh\about.html:234
+msgid "Отслеживайте свой закай онлайн"
+msgstr "Track your order online"
+
+#: .\main_sh\templates\main_sh\about.html:236
+msgid "После оплаты оборудования, личный менеджер будет консультироваь вас на каждом этапе доставки"
+msgstr "After paying for the equipment, a personal manager will advise you at every stage of delivery"
+
+#: .\main_sh\templates\main_sh\about.html:237
+msgid "Так же вы сможете делать это самостоятельно онлайн в разделе"
+msgstr "You can also do it yourself online in the section"
+
+#: .\main_sh\templates\main_sh\about.html:239
+msgid "Найти свой заказ"
+msgstr "Find your order"
+
+#: .\main_sh\templates\main_sh\about.html:303
+msgid "Выгодные условия"
+msgstr "Favorable conditions"
+
+#: .\main_sh\templates\main_sh\about.html:303
+msgid "на оптовый заказ"
+msgstr "for bulk order"
+
+#: .\main_sh\templates\main_sh\about.html:304
+msgid "Гарантия 1 года на всё оборудование"
+msgstr "1 year warranty on all equipment"
+
+#: .\main_sh\templates\main_sh\about.html:312
+msgid "Почему нам можно доверять"
+msgstr "Why can we be trusted"
+
+#: .\main_sh\templates\main_sh\about.html:332
+msgid "Наши Дата-центры"
+msgstr "Our Data Centers"
+
+#: .\main_sh\templates\main_sh\about.html:354
+msgid "Много свободных мест"
+msgstr "Lots of free places"
+
+#: .\main_sh\templates\main_sh\about.html:375
+msgid "Красноярский край"
+msgstr "Krasnoyarsk Territory"
+
+#: .\main_sh\templates\main_sh\about.html:379
+msgid "₽/кВт"
+msgstr "₽/кВт"
+
+#: .\main_sh\templates\main_sh\about.html:403
+msgid "Мест почти нет"
+msgstr "There are almost no places"
+
+#: .\main_sh\templates\main_sh\about.html:442
+msgid "Фото с локации"
+msgstr "Photos from the location"
+
+
+
+
+
+
+
+
+#: .\main_sh\templates\main_sh\blog.html:20
+msgid "Новости"
+msgstr "News"
+
+#: .\main_sh\templates\main_sh\blog.html:41
+msgid "Читать далее"
+msgstr "Read more"
+
+#: .\main_sh\templates\main_sh\blog.html:106
+msgid "Наш Telegram канал"
+msgstr "Our Telegram channel"
+
+#: .\main_sh\templates\main_sh\blog.html:113
+msgid "Перейти"
+msgstr "Go over"
+
+
+
+
+#: .\main_sh\templates\main_sh\detail_news.html:46
+msgid "Новости на тему"
+msgstr "News on the topic"
+
+#: .\main_sh\templates\main_sh\detail_news.html:59
+msgid "Читайте также"
+msgstr "Read also"
+
+#: .\main_sh\templates\main_sh\detail_news.html:80
+msgid "Нет похожих новостей"
+msgstr "There is no similar news"
+
+
+
+
+#: .\main_sh\templates\main_sh\home.html:15
+msgid "Наш Telegram магазин"
+msgstr "Our Telegram store"
+
+#: .\main_sh\templates\main_sh\home.html:31
+msgid "Самые популярные"
+msgstr "The most popular"
+
+#: .\main_sh\templates\main_sh\home.html:99
+msgid "Увидеть больше"
+msgstr "See more"
+
+#: .\main_sh\templates\main_sh\home.html:115
+msgid "Как быстро оформить заказ"
+msgstr "How to place an order quickly"
+
+#: .\main_sh\templates\main_sh\home.html:137
+msgid "мин"
+msgstr "mines"
+
+#: .\main_sh\templates\main_sh\home.html:158
+msgid "Отзывы наших"
+msgstr "Feedback from our"
+
+#: .\main_sh\templates\main_sh\home.html:158
+msgid "клиентов"
+msgstr "clients"
+
+#: .\main_sh\templates\main_sh\home.html:231
+msgid "Оставить отзыв"
+msgstr "Leave a review"
+
+#: .\main_sh\templates\main_sh\home.html:233
+msgid "Мы рады вашим новым отзывам в телеграм канале"
+msgstr "We are glad to receive your new feedback in the telegram channel"
+
+#: .\main_sh\templates\main_sh\home.html:245
+msgid "Как мы можем помочь вашему майнингу"
+msgstr "How can we help your mining"
+
+#: .\main_sh\templates\main_sh\home.html:246
+msgid "Получить консультацию"
+msgstr "Get a consultation"
+
+#: .\main_sh\templates\main_sh\home.html:252
+msgid "Актуальные цены на майнинг оборудование"
+msgstr "Current prices for mining equipment"
+
+#: .\main_sh\templates\main_sh\home.html:253
+msgid "Прайс лист"
+msgstr "Price list"
+
+
+
+
+
+
+
+#: .\main_sh\templates\main_sh\order.html:93
+msgid "Информация о заказе"
+msgstr "Order Information"
+
+#: .\main_sh\templates\main_sh\order.html:100
+msgid "Введите номер заказа"
+msgstr "Enter the order number"
+
+#: .\main_sh\templates\main_sh\order.html:117
+msgid "Здесь будет информация о вашем заказе"
+msgstr "There will be information about your order here"
+
+#: .\main_sh\templates\main_sh\order.html:127
+msgid "Вопрос по заказу"
+msgstr "Question about the order"
+
+#: .\main_sh\templates\main_sh\order.html:130
+msgid "Заказ"
+msgstr "Order"
+
+#: .\main_sh\templates\main_sh\order.html:134
+msgid "В заказе"
+msgstr "In the order"
+
+#: .\main_sh\templates\main_sh\order.html:157
+msgid "Дополнительная информация"
+msgstr "Additional information"
+
+#: .\main_sh\templates\main_sh\order.html:162
+msgid "Итого"
+msgstr "Total"
+
+#: .\main_sh\templates\main_sh\order.html:169
+msgid "Статус"
+msgstr "Status"
+
+#: .\main_sh\templates\main_sh\order.html:172
+msgid "Собираем"
+msgstr "Collecting"
+
+#: .\main_sh\templates\main_sh\order.html:174
+msgid "В пути"
+msgstr "On the way"
+
+#: .\main_sh\templates\main_sh\order.html:176
+msgid "Готов к выдаче"
+msgstr "Ready to be issued"
+
+#: .\main_sh\templates\main_sh\order.html:178
+msgid "Обрабатываем заказ"
+msgstr "Processing the order"
+
+#: .\main_sh\templates\main_sh\order.html:186
+msgid "дата доставки"
+msgstr "delivery date"
+
+#: .\main_sh\templates\main_sh\order.html:190
+msgid "Расчитываем время доставки"
+msgstr "We calculate the delivery time"
+
+
+
+
+
+
+
+
+#: .\main_sh\templates\main_sh\razmecenie.html:19
+msgid "Наши преимущества"
+msgstr "Our advantages"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:40
+msgid "Обеспечивает высокую надёжность: таким образом ваше оборудование не будет простаивать и принесёт больше прибыли"
+msgstr "Provides high reliability: this way your equipment will not be idle and will bring more profit"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:54
+msgid "Низкая стоимость обслуживания"
+msgstr "Low maintenance cost"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:68
+msgid "Мониторинг размещения"
+msgstr "Placement monitoring"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:70
+msgid "В онлайн формате сможете отслеживать эффективность вышего оборудования"
+msgstr "You will be able to track the effectiveness of your equipment in an online format"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:82
+msgid "Всё оборудование защищено"
+msgstr "All equipment is protected"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:84
+msgid "По этому ваши средства всегда находятся в безопасности"
+msgstr "Therefore, your funds are always safe"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:96
+msgid "Охрана"
+msgstr "Security"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:98
+msgid "Весь объект в круглосуточном режиме находится под видео наблюдением"
+msgstr "The entire facility is under video surveillance around the clock"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:116
+msgid "Готовое решение под ключ"
+msgstr "Ready-made turnkey solution"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:118
+msgid "Постовляем оборудование для майнинга с последующим размещением в ДАТА-центре"
+msgstr "We are installing mining equipment with subsequent placement in the DATA center"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:120
+msgid "Собственное производство контейнеров для майнинга"
+msgstr "Own production of mining containers"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:124
+msgid "Подать заявку"
+msgstr "Submit an application"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:154
+msgid "Нам больше нечем гордиться"
+msgstr "We have nothing to be proud of anymore"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:159
+msgid "Онлайн чат с нашими клиентами"
+msgstr "Online chat with our clients"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:160
+msgid "Наше майнерское комьюнити"
+msgstr "Our mining community"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:160
+msgid "Telegram канале"
+msgstr "Telegram channel"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:160
+msgid "поможет больше узнать о нас, о поставках оборудования, в надобности стабилизаторов напряжения и работе дата центров"
+msgstr "it will help you learn more about us, about the supply of equipment, the need for voltage stabilizers and the work of data centers"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:164
+msgid "Стоимость  от 3,35 грн кВТ/час в зависимости от тарифа"
+msgstr "The cost starts from 3.35 UAH kW/hour, depending on the tariff"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:167
+msgid "Индивидуальный учёт"
+msgstr "Individual accounting"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:168
+msgid "Индивидуальный учёт для каждого клиента — платите только за то, что потребляете"
+msgstr "Individual accounting for each client — pay only for what you consume"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:173
+msgid "2 собственных дата центра"
+msgstr "2 own data centers"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:174
+msgid "мощностью 7 МВт"
+msgstr "with a capacity of 7 MW"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:185
+msgid "Обслуживание майнеров"
+msgstr "Maintenance of miners"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:186
+msgid "Инженеры дата-центра проверяют работу всех компонентов устройств, оперативно выявляют и устраняют неполадки"
+msgstr "Data center engineers check the operation of all device components, promptly identify and fix problems"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:190
+msgid "Вам не нужно переживать"
+msgstr "You don't need to worry"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:191
+msgid "за работу майнеров"
+msgstr "for the work of miners"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:195
+msgid "Техническая поддержка 24/7"
+msgstr "24/7 technical support"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:196
+msgid "Технические специалисты готовы вам помочь в любое время суток"
+msgstr "Technical specialists are ready to help you at any time of the day"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:199
+msgid "Доступ к оборудованию"
+msgstr "Access to equipment"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:200
+msgid "В любой момент вы сможете приехать на локацию и сами убедиться в сохранности ваших майнеров"
+msgstr "At any time, you can come to the location and make sure that your miners are safe"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:203
+msgid "99,5% аптайм"
+msgstr "99,5% uptime"
+
+#: .\main_sh\templates\main_sh\razmecenie.html:204
+msgid "Благодаря высокому аптайму и надежному электроснабжению ваше оборудование не простаивает и позволяет не терять вам деньги"
+msgstr "Thanks to high uptime and reliable power supply, your equipment does not stand idle and allows you not to lose money"
+
+#: .\main_sh\templates\main_sh\warranty.html:17
+msgid "Введите номер гарантии на оборудование"
+msgstr "Enter the hardware warranty number"
+
+#: .\main_sh\templates\main_sh\warranty.html:19
+msgid "Проверить"
+msgstr "Check"
+
+#: .\main_sh\templates\main_sh\warranty.html:34
+msgid "Обращайтесь за помощью если ваша проблема подходит под"
+msgstr "Ask for help if your problem fits"
+
+#: .\main_sh\templates\main_sh\warranty.html:34
+msgid "гарантийный случай"
+msgstr "warranty case"
+
+#: .\main_sh\templates\main_sh\warranty.html:35
+msgid "В случае, если ваше майнинговое оборудование выходит из строя или возникают проблемы в течение гарантийного периода от производителя, мы предоставляем техническую поддержку через наш сервисный центр, или вы можете самостоятельно обратится на сайт производителя"
+msgstr "In case your mining equipment fails or problems arise during the warranty period from the manufacturer, we provide technical support through our service center, or you can contact the manufacturer's website yourself"
+
+
+#: .\main_sh\templates\main_sh\warranty.html:45
+msgid "Вопрос по гарантии"
+msgstr "Warranty issue"
+
+#: .\main_sh\templates\main_sh\warranty.html:48
+msgid "Номер гарантии"
+msgstr "Warranty number"
+
+#: .\main_sh\templates\main_sh\warranty.html:53
+msgid "Гарантия активна"
+msgstr "The warranty is active"
+
+#: .\main_sh\templates\main_sh\warranty.html:55
+msgid "Будет активна после получения заказа"
+msgstr "It will be active after receiving the order"
+
+
+
+
+
+
+
+
+
+
+
+
+#: .\telweb\templates\telweb\basket.html:13
+msgid "Корзина"
+msgstr "Basket"
+
+#: .\telweb\templates\telweb\basket.html:60
+msgid "Перейти к оплате"
+msgstr "Proceed to payment"
+
+#: .\telweb\templates\telweb\basket.html:64
+msgid "В корзине нет товаров"
+msgstr "There are no items in the shopping cart"
+
+#: .\telweb\templates\telweb\basket.html:68
+msgid "вернуться в каталог"
+msgstr "return to the catalog"
+
+#: .\telweb\templates\telweb\brend_cat.html:9
+msgid "Выберите производителя"
+msgstr "Choose a manufacturer"
+
+#: .\telweb\templates\telweb\catalog.html:26
+msgid "Асики"
+msgstr "Asics"
+
+#: .\telweb\templates\telweb\catalog.html:48
+msgid "Добавить"
+msgstr "Add"
+
+#: .\telweb\templates\telweb\home.html:11
+msgid "Магазин"
+msgstr "Shop"
+
+#: .\telweb\templates\telweb\home.html:17
+msgid "Поддержка"
+msgstr "Support"
+
+#: .\telweb\templates\telweb\net_detail.html:8
+msgid "Скопировано"
+msgstr "Copied"
+
+#: .\telweb\templates\telweb\net_detail.html:16
+msgid "Спасибо что пользуетесь нашим сервисом, теперь вы можете отслеживать статус своего заказа на нашем сайте"
+msgstr "Thank you for using our service, now you can track the status of your order on our website"
+
+#: .\telweb\templates\telweb\net_detail.html:19
+msgid "Заявка"
+msgstr "Application"
+
+#: .\telweb\templates\telweb\net_detail.html:21
+msgid "Заявка не найдена, или истекло время на оплату"
+msgstr "The application was not found, or the time for payment has expired"
+
+#: .\telweb\templates\telweb\net_detail.html:29
+msgid "Время для оплаты"
+msgstr "Time for payment"
+
+#: .\telweb\templates\telweb\net_detail.html:36
+msgid "Сумма для оплаты"
+msgstr "The amount to be paid"
+
+#: .\telweb\templates\telweb\net_detail.html:41
+msgid "Сеть"
+msgstr "Network"
+
+#: .\telweb\templates\telweb\net_detail.html:52
+msgid "Скопировать адрес кошелька"
+msgstr "Copy the wallet address"
+
+#: .\telweb\templates\telweb\net_detail.html:62
+msgid "Скопировать сумму"
+msgstr "Copy the amount"
+
+#: .\telweb\templates\telweb\net_detail.html:70
+msgid "Появились вопросы"
+msgstr "There are questions"
+
+#: .\telweb\templates\telweb\net_detail.html:75
+msgid "Время на оплату вышло, попробуйте создать новую заявку в"
+msgstr "The time for payment is up, try to create a new application in"
+
+#: .\telweb\templates\telweb\net_detail.html:75
+msgid "каталоге"
+msgstr "catalog"
+
+#: .\telweb\templates\telweb\pay_choise.html:11
+msgid "Выберите сеть"
+msgstr "Select a network"
+
+#: .\telweb\templates\telweb\pay_choise.html:34
+msgid "Эта валюта поддерживает различные сети. Выберите, через которую вы будете отправлять токены"
+msgstr "This currency supports various networks. Choose which one you will use to send tokens"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#: .\main_sh\templates\main_sh\sorry.html:46
+msgid "Приносим свои извинения"
+msgstr "We apologize"
+
+#: .\main_sh\templates\main_sh\sorry.html:47
+msgid "Our data centers temporarily do not accept applications for placement, you can find out more in our Telegram channel"
+msgstr "We apologize"
+
+#: .\main_sh\templates\main_sh\about.html:376
+msgid "Львов"
+msgstr "Lviv"
+
+#: .\main_sh\templates\main_sh\about.html:425
+msgid "Луцк"
+msgstr "Lutsk"
+
+#: .\main_sh\views.py:143
+msgid "Гарантия не найдена, проверьте номер гарантии и попробуйте снова."
+msgstr "The warranty was not found, check the warranty number and try again."
+
+#: .\main_sh\views.py:127
+msgid "Заказ не найден, проверьте номер заказа и попробуйте снова."
+msgstr "The order was not found, check the order number and try again."
+
+#: .\telweb\templates\telweb\pay_page.html:10
+msgid "Оплата"
+msgstr "Payment"
+
+#: .\telweb\templates\telweb\pay_page.html:30
+msgid "Количество"
+msgstr "Quantity"
+
+#: .\telweb\templates\telweb\pay_page.html:70
+msgid "Назад к корзине"
+msgstr "Back to the basket"
+
+#: .\telweb\templates\telweb\pay_page.html:89
+msgid "Выберите способ оплаты"
+msgstr "Choose a payment method"
+
+#: .\telweb\templates\telweb\pay_page.html:95
+msgid "oплатить самостоятельно"
+msgstr "pay by yourself"
+
+#: .\telweb\templates\telweb\pay_page.html:100
+msgid "oплатить с менеджером"
+msgstr "pay with a manager"
+
+#: .\telweb\templates\telweb\pay_page.html:105
+msgid "На карту"
+msgstr "Card"
+
+#: .\telweb\templates\telweb\pay_page.html:110
+msgid "Наличными"
+msgstr "Cash"
+
+#: .\telweb\templates\telweb\pay_page.html:119
+msgid "Способ получения"
+msgstr "The method of obtaining"
+
+#: .\telweb\templates\telweb\pay_page.html:124
+msgid "Самовывоз со склада в Одессе"
+msgstr "Pickup from a warehouse in Odessa"
+
+#: .\telweb\templates\telweb\pay_page.html:124
+msgid "Малиновский район, Базовая ул. (12:00 - 20:00)"
+msgstr "Malinovsky district, Basnaya St. (12:00 - 20:00)"
+
+#: .\telweb\templates\telweb\pay_page.html:129
+msgid "Доставка"
+msgstr "Delivery"
+
+#: .\telweb\templates\telweb\pay_page.html:134
+msgid "Адрес"
+msgstr "Address"
+
+#: .\telweb\templates\telweb\pay_page.html:144
+msgid "Информация получателя"
+msgstr "Recipient's Information"
+
+#: .\telweb\templates\telweb\pay_page.html:150
+msgid "Получатель"
+msgstr "Recipient"
+
+#: .\telweb\templates\telweb\pay_page.html:159
+msgid "Напишите комментарий"
+msgstr "Write a comment"
+
+#: .\telweb\templates\telweb\pay_page.html:160
+msgid "Комментарий"
+msgstr "Comment"
+
+#: .\telweb\templates\telweb\pay_page.html:167
+msgid "Оплатить"
+msgstr "To pay"
+
+#: .\telweb\templates\telweb\net_detail.html:36
+msgid "на адрес ниже"
+msgstr "to the address below"
+
+#: .\telweb\templates\telweb\not_solo.html:9
+msgid "Спасибо что воспользовались нашим сервисом"
+msgstr "Thank you for using our service"
+
+#: .\telweb\templates\telweb\not_solo.html:9
+msgid "Номер вашего заказа"
+msgstr "Your order number"
+
+#: .\telweb\templates\telweb\not_solo.html:18
+msgid "Скопировать номер заявки"
+msgstr "Copy the application number"
+
+#: .\telweb\templates\telweb\not_solo.html:21
+msgid "Для продолжения покупки отправте номер заказа нашему менеджеру в Telegram"
+msgstr "To continue the purchase, send the order number to our manager in Telegram"
+
+#: .\telweb\templates\telweb\not_solo.html:22
+msgid "Продолжить покупку"
+msgstr "Continue the purchase"
+
+#: .\cat\templates\cat\detail.html:22
+msgid "Продолжая, вы соглашаетесь с "
+msgstr "By continuing, you agree to "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
