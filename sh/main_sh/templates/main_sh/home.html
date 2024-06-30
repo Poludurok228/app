@@ -1,0 +1,258 @@
+{% extends 'main_sh/base.html' %}
+{% load i18n %}
+
+{% block title %}CryptoTech{% endblock %}
+
+{% block content %}
+	<section class="telegram__section">
+
+		<svg viewBox="0 0 55 55" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width=".3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs></defs><path class="cls-1" d="M40.83,8.48c1.14,0,2,1,1.54,2.86l-5.58,26.3c-.39,1.87-1.52,2.32-3.08,1.45L20.4,29.26a.4.4,0,0,1,0-.65L35.77,14.73c.7-.62-.15-.92-1.07-.36L15.41,26.54a.46.46,0,0,1-.4.05L6.82,24C5,23.47,5,22.22,7.23,21.33L40,8.69a2.16,2.16,0,0,1,.83-.21Z"></path></g></svg>
+
+		<div class="info__text__tg">
+
+			<p>@CryptoTech</p>
+
+			<h2>{% trans 'Наш Telegram магазин' %}</h2>
+
+		</div>
+
+
+		<div class="link__tg">
+
+			<a class="cursor-scale" href="https://t.me/+Y_aw8GoDVBAwYWJi">{% trans 'Перейти' %}</a>
+
+		</div>
+
+	</section>
+
+
+	<section class="slider__section">
+
+		<h1 class="section__title ttl">{% trans 'Самые популярные' %} <br> {% trans 'модели' %}</h1>
+
+		<div class="swiper asic__swiper">
+
+		  <div class="swiper-wrapper">
+
+
+			{% for as in asic %}
+		    	<div style="background: {{ as.bg_fon.back_card }};" class="swiper-slide swiper-slide__asic cursor-scale">
+
+					<span class="positon__number__slide">[ {{ as.asic_number }} ]</span>
+
+					<a href="{{ as.get_absolute_url }}">
+
+						<span class="name__slider__card">
+
+							<p style="color: {{ as.bg_fon.text_color }}">{{ as.title_min }}</p>
+
+							<span style="color: {{ as.bg_fon.color_th }}; background: {{ as.bg_fon.back_th }};">{{ as.property.hesh }}</span>
+
+						</span>
+
+						<img src="{{ as.main_img.url }}" alt="">
+
+					</a>
+
+				</div>
+			  {% endfor %}
+
+
+		  </div>
+
+		</div>
+
+		<div class="swiper asic__swiper2">
+
+		  <div class="swiper-wrapper">
+
+
+
+		    {% for as in asic %}
+		    	<div style="background: {{ as.bg_fon.back_card }};" class="swiper-slide swiper-slide__asic cursor-scale">
+
+					<span class="positon__number__slide">[ {{ as.asic_number }} ]</span>
+
+					<a href="{{ as.get_absolute_url }}">
+
+						<span class="name__slider__card">
+
+							<p style="color: {{ as.bg_fon.text_color }}">{{ as.title_min }}</p>
+
+							<span style="color: {{ as.bg_fon.color_th }}; background: {{ as.bg_fon.back_th }};">{{ as.property.hesh }}</span>
+
+						</span>
+
+						<img src="{{ as.main_img.url }}" alt="">
+
+					</a>
+
+				</div>
+			  {% endfor %}
+
+		  </div>
+
+		</div>
+
+		<div class="btn__more">
+			<a class="default__border__link" href="{% url 'catalog:home' %}">
+				{% trans 'Увидеть больше' %}
+				<span>
+					<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15 2L26 11.5L15 21" stroke="#fff" stroke-width="3"/>
+					<path d="M0 11.5H25" stroke="#fff" stroke-width="3"/>
+					</svg>
+				</span>
+			</a>
+		</div>
+
+	</section>
+
+
+
+	<section class="steps__section">
+
+		<h1 class="ttl">{% trans 'Как быстро оформить заказ' %}?</h1>
+
+
+		<div class="steps__container">
+
+			{% for step in steps %}
+				<div class="step__item {{ step.step_class }}">
+
+				<div class="scroll__bar">
+
+					<div class="scroll__bar__proggres"></div>
+
+				</div>
+
+				<div class="step__text__container">
+
+					<p class="step__number">STEP {{ step.step_number }}</p>
+
+					<h1 class="step__title">{{ step.title }}</h1>
+
+					<p class="step__desc">{{ step.description }}</p>
+
+					<div class="step__time"><p>{{ step.timer }} {% trans 'мин' %}</p></div>
+
+				</div>
+
+				<div class="step__img">
+					<img style="min-width: calc(var(--index) * 45)" src="{{ step.img.url }}" alt="">
+				</div>
+
+			</div>
+			{% endfor %}
+
+
+		</div>
+
+	</section>
+
+
+
+	<section class="reviews__section">
+
+		<div class="section__title">
+			<h1 class="ttl">{% trans 'Отзывы наших' %} <br>{% trans 'клиентов' %}</h1>
+
+			<div class="review__btn__con">
+
+				<div class="swiper-button-prev btns__reviews rt180">
+
+					<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15 2L26 11.5L15 21" stroke="#fff" stroke-width="3"/>
+					<path d="M0 11.5H25" stroke="#fff" stroke-width="3"/>
+					</svg>
+
+				</div>
+
+		  		<div class="swiper-button-next btns__reviews">
+
+		  			<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15 2L26 11.5L15 21" stroke="#fff" stroke-width="3"/>
+					<path d="M0 11.5H25" stroke="#fff" stroke-width="3"/>
+					</svg>
+
+		  		</div>
+
+			</div>
+
+		</div>
+
+		<div class="swiper swiper__review">
+
+		  <div class="swiper-wrapper">
+
+		    {% for rev in review %}
+			  <div class="swiper-slide swiper-slide__review">
+
+					<p class="message__review">“{{ rev.description }}”</p>
+
+					<div class="review__footer">
+						<span class="name__reviewer">{{ rev.title }}</span>
+						<a href="{{ rev.link }}" class="link__reviewer a__bottom__hover">{{ rev.link_name }}</a>
+					</div>
+
+			  </div>
+			{% endfor %}
+
+
+		  </div>
+
+		</div>
+
+		<div class="swiper swiper__review2">
+
+		  <div class="swiper-wrapper">
+
+		    {% for rev in review %}
+			  <div class="swiper-slide swiper-slide__review">
+
+					<p class="message__review">“{{ rev.description }}”</p>
+
+					<div class="review__footer">
+						<span class="name__reviewer">{{ rev.title }}</span>
+						<a href="{{ rev.link }}" class="link__reviewer a__bottom__hover">{{ rev.link_name }}</a>
+					</div>
+
+			  </div>
+			{% endfor %}
+
+		  </div>
+
+		</div>
+
+
+
+		<div class="review__section__footer">
+
+			<a class="cursor-scale default__border__link review__section__footer__link" href="https://t.me/CryptoTechChatUA">{% trans 'Оставить отзыв' %}</a>
+
+			<p>{% trans 'Мы рады вашим новым отзывам в телеграм канале' %}!</p>
+
+		</div>
+
+	</section>
+
+
+
+	<section class="help__section">
+
+		<div class="help__section__item">
+
+			<h1>{% trans 'Как мы можем помочь вашему майнингу' %}?</h1>
+			<a class="default__border__link" href="https://t.me/CryptoTechUA">{% trans 'Получить консультацию' %}</a>
+
+		</div>
+
+		<div class="help__section__item">
+
+			<h1>{% trans 'Актуальные цены на майнинг оборудование' %}</h1>
+			<a class="default__border__link" href="{% url 'main_page:download_price_list' %}">{% trans 'Прайс лист' %}</a>
+
+		</div>
+
+	</section>
+{% endblock %}

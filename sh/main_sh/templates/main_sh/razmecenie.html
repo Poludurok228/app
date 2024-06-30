@@ -1,0 +1,261 @@
+{% extends 'main_sh/base__about.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'О нас' %}{% endblock %}
+
+{% block dop_content %}
+
+{% endblock %}
+
+
+{% block content %}
+
+	{% include 'includes/slider_razmecenie.html' %}
+
+
+	<section class="cod__advantages">
+
+		<h1 class="cod__advantages__title">{% trans 'Наши преимущества' %}</h1>
+
+		<div class="con__cod__advantages">
+
+			<div class="cod__advantages__item cod__advantages__item__main bordereckii">
+
+				<img src="{% static 'cat/img/svg/3.svg' %}" alt="" class="img__cod__item img__cod__item__1">
+				<img src="{% static 'cat/img/svg/3.svg' %}" alt="" class="img__cod__item img__cod__item__2">
+				<img src="{% static 'cat/img/svg/3.svg' %}" alt="" class="img__cod__item img__cod__item__3">
+				<img src="{% static 'cat/img/svg/3.svg' %}" alt="" class="img__cod__item img__cod__item__4">
+				<img src="{% static 'cat/img/svg/3.svg' %}" alt="" class="img__cod__item img__cod__item__5">
+				<img src="{% static 'cat/img/svg/3.svg' %}" alt="" class="img__cod__item img__cod__item__6">
+				<img src="{% static 'cat/img/svg/3.svg' %}" alt="" class="img__cod__item img__cod__item__7">
+
+
+				<div class="content__cod__advantages__item">
+
+					<div class="nember__cod__advantages__item">01</div>
+
+					<h2 class="title__cod__advantages__item">UPtime</h2>
+
+					<p class="description__cod__advantages__item">{% trans 'Обеспечивает высокую надёжность: таким образом ваше оборудование не будет простаивать и принесёт больше прибыли' %}.</p>
+
+				</div>
+
+				<a href="#" class="btn__cod__advantages__item">{% trans 'Оставить заявку' %}</a>
+
+			</div>
+
+			<div class="cod__advantages__item bordereckii">
+
+				<div class="content__cod__advantages__item">
+
+					<div class="nember__cod__advantages__item">02</div>
+
+					<h2 class="title__cod__advantages__item">{% trans 'Низкая стоимость обслуживания' %}</h2>
+
+					<p class="description__cod__advantages__item">{% trans 'Выгодные условия' %}</p>
+
+				</div>
+
+			</div>
+
+			<div class="cod__advantages__item bordereckii">
+
+				<div class="content__cod__advantages__item">
+
+					<div class="nember__cod__advantages__item">03</div>
+
+					<h2 class="title__cod__advantages__item">{% trans 'Мониторинг размещения' %}</h2>
+
+					<p class="description__cod__advantages__item">{% trans 'В онлайн формате сможете отслеживать эффективность вышего оборудования' %}</p>
+
+				</div>
+
+			</div>
+
+			<div class="cod__advantages__item bordereckii">
+
+				<div class="content__cod__advantages__item">
+
+					<div class="nember__cod__advantages__item">04</div>
+
+					<h2 class="title__cod__advantages__item">{% trans 'Всё оборудование защищено' %}</h2>
+
+					<p class="description__cod__advantages__item">{% trans 'По этому ваши средства всегда находятся в безопасности' %}</p>
+
+				</div>
+
+			</div>
+
+			<div class="cod__advantages__item bordereckii">
+
+				<div class="content__cod__advantages__item">
+
+					<div class="nember__cod__advantages__item">05</div>
+
+					<h2 class="title__cod__advantages__item">{% trans 'Охрана' %}</h2>
+
+					<p class="description__cod__advantages__item">{% trans 'Весь объект в круглосуточном режиме находится под видео наблюдением' %}</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+
+	<section class="section__ready__things">
+
+		<div class="section__ready__things__left">
+
+			<div class="content__section__ready__things__left">
+
+				<h1>{% trans 'Готовое решение под ключ' %}</h1>
+
+				<p>{% trans 'Постовляем оборудование для майнинга с последующим размещением в ДАТА-центре' %}.</p>
+
+				<p>{% trans 'Собственное производство контейнеров для майнинга' %}</p>
+
+			</div>
+
+			<a href="https://t.me/CryptoTechUA">{% trans 'Подать заявку' %}</a>
+
+		</div>
+
+		<div class="section__ready__things__right">
+
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__1">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__2">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__3">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__4">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__5">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__6">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__7">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__8">
+			<img src="{% static 'cat/img/el.png' %}" alt="" class="dop__img__r dop__img__r__9">
+
+			<img class="main__img__r" src="{% static 'cat/img/c.png' %}" alt="">
+
+		</div>
+
+	</section>
+
+
+
+
+
+
+
+	<section class="dop__info__section__razmecenie">
+
+		<h1 class="dop__info__section__razmecenie__title">{% trans 'Нам есть чем гордиться' %}</h1>
+
+		<div class="first__grid__block__razmecenie gridok_ji__razmecenie">
+
+			<div class="first__grid__block__razmecenie__item padislavich">
+				<h2>{% trans 'Онлайн чат с нашими клиентами' %}</h2>
+				<p>{% trans 'Наше майнерское комьюнити' %} в <a style="color: #fff; text-transform: none; border-bottom: 1px solid #fff; opacity: 1 !important;" href="https://t.me/UAcryptotech">{% trans 'Telegram канале' %}</a> {% trans 'поможет больше узнать о нас, о поставках оборудования, в надобности стабилизаторов напряжения и работе дата центров' %}</p>
+			</div>
+			<div class="first__grid__block__razmecenie__item bg__fff padislavich">
+				<h2>{% trans 'Стоимость' %}</h2>
+				<p>{% trans 'Стоимость  от 3,35 грн кВТ/час в зависимости от тарифа' %}</p>
+			</div>
+			<div class="first__grid__block__razmecenie__item bg__fff padislavich">
+				<h2>{% trans 'Индивидуальный учёт' %}</h2>
+				<p>{% trans 'Индивидуальный учёт для каждого клиента — платите только за то, что потребляете' %}</p>
+			</div>
+			<div class="first__grid__block__razmecenie__item padislavich bg__img__first">
+				<img src="{% static 'cat/img/power.jpg' %}" alt="">
+				<div class="changer__bg__razmecenie changer__bg__razmecenie1">
+					<h4>{% trans '2 собственных дата центра' %}</h4>
+					<h4>{% trans 'мощностью 7 МВт' %}</h4>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="second__grid__block__razmecenie gridok_ji__razmecenie">
+
+			<div class="second__grid__block__razmecenie__item bg__fff padislavich">
+				<h2>{% trans 'Обслуживание майнеров' %}</h2>
+				<p>{% trans 'Инженеры дата-центра проверяют работу всех компонентов устройств, оперативно выявляют и устраняют неполадки' %}</p>
+			</div>
+			<div class="second__grid__block__razmecenie__item second__child__item padislavich bg__img__second"><img src="{% static 'cat/img/chek.jpg' %}" alt="">
+				<div class="changer__bg__razmecenie">
+					<h4>{% trans 'Вам не нужно переживать' %}</h4>
+					<h4>{% trans 'за работу майнеров' %}</h4>
+				</div>
+			</div>
+			<div class="second__grid__block__razmecenie__item bg__fff padislavich">
+				<h2>{% trans 'Техническая поддержка 24/7' %}</h2>
+				<p>{% trans 'Технические специалисты готовы вам помочь в любое время суток' %}</p>
+			</div>
+			<div class="second__grid__block__razmecenie__item bg__fff padislavich">
+				<h2>{% trans 'Доступ к оборудованию' %}</h2>
+				<p>{% trans 'В любой момент вы сможете приехать на локацию и сами убедиться в сохранности ваших майнеров' %}</p>
+			</div>
+			<div class="second__grid__block__razmecenie__item padislavich">
+				<h2>{% trans '99,5% uptime' %}</h2>
+				<p>{% trans 'Благодаря высокому аптайму и надежному электроснабжению ваше оборудование не простаивает и позволяет не терять вам деньги' %}</p>
+			</div>
+
+		</div>
+
+	</section>
+
+
+
+	<section style="background: #0052cd;" class="telegram__section">
+
+		<svg viewBox="0 0 55 55" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width=".3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs></defs><path class="cls-1" d="M40.83,8.48c1.14,0,2,1,1.54,2.86l-5.58,26.3c-.39,1.87-1.52,2.32-3.08,1.45L20.4,29.26a.4.4,0,0,1,0-.65L35.77,14.73c.7-.62-.15-.92-1.07-.36L15.41,26.54a.46.46,0,0,1-.4.05L6.82,24C5,23.47,5,22.22,7.23,21.33L40,8.69a2.16,2.16,0,0,1,.83-.21Z"></path></g></svg>
+
+		<div class="info__text__tg">
+
+			<p>@CryptoTech</p>
+
+			<h2>{% trans 'Наш Telegram магазин' %}</h2>
+
+		</div>
+
+
+		<div class="link__tg">
+
+			<a style="border: unset;" class="cursor-scale" href="https://t.me/UAcryptotech">{% trans 'Перейти' %}</a>
+
+		</div>
+
+	</section>
+
+{% endblock %}
+
+
+{% block dop_script %}
+<script>
+		function openTab(evt, tabName) {
+		  var i, tabcontent, tablinks;
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+		    tabcontent[i].style.display = "none";
+		  }
+		  tablinks = document.getElementsByClassName("tablink");
+		  for (i = 0; i < tablinks.length; i++) {
+		    tablinks[i].className = tablinks[i].className.replace(" active", "");
+		  }
+		  document.getElementById(tabName).style.display = "block";
+		  if(evt) evt.currentTarget.className += " active";
+		}
+
+		// Добавляем слушатель событий, чтобы убедиться, что DOM загружен
+		document.addEventListener('DOMContentLoaded', function() {
+		  // Имитируем клик по первой вкладке
+		  // Здесь предполагается, что у вас вкладки именуются 'Tab1', 'Tab2', 'Tab3'...
+		  // Или альтернативно, вы можете вызвать openTab(null, 'Tab1'); если нет нужды в передаче события
+		  document.querySelector('.tablink').click();
+		});
+	</script>
+{% endblock %}

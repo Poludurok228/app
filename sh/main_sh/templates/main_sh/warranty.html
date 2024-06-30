@@ -1,0 +1,67 @@
+{% extends 'main_sh/order.html' %}
+{% load i18n %}
+
+{% block title %}Проверить гарантию{% endblock %}
+
+{% block content %}
+
+<section class="search__order__or__garant">
+
+		<h1 class="search__order__or__garant__title">{% trans 'Проверить гарантию' %}</h1>
+
+
+		<div class="labelhor">
+
+			<form method="get" action="#" class="searching">
+
+				<input name="q_warranty" placeholder="{% trans 'Введите номер гарантии на оборудование' %}" type="search">
+
+				<button type="submit">{% trans 'Проверить' %}</button>
+
+			</form>
+
+		</div>
+
+
+		<div class="flex__form__con">
+
+			{% if wrong %}
+				<div {% if warranty %} style="display: none" {% endif %} class="info__search">
+						<p>{{ wrong }}</p>
+				</div>
+			{% else %}
+				<div {% if warranty %} style="display: none" {% endif %} class="info__search">
+						<p>{% trans 'Обращайтесь за помощью если ваша проблема подходит под' %} <a href="#">{% trans 'гарантийный случай' %}</a>.</p>
+						<p>{% trans 'В случае, если ваше майнинговое оборудование выходит из строя или возникают проблемы в течение гарантийного периода от производителя, мы предоставляем техническую поддержку через наш сервисный центр, или вы можете самостоятельно обратится на сайт производителя' %}.</p>
+				</div>
+			{% endif %}
+
+			{% if warranty %}
+				<div class="order__card">
+
+
+				<div class="span__post__bottom_l dicorations">
+					<span>?</span>
+					<a href="#">{% trans 'Вопрос по гарантии' %}?</a>
+				</div>
+
+				<h2 class="card__order__title">{% trans 'Номер гарантии' %}: {{ warranty.art }}</h2>
+
+				<div class="card__order__body">
+
+					{% if warranty.ready %}
+						<p>{% trans 'Гарантия активна' %}</p>
+					{% else %}
+						<h3>{% trans 'Будет активна после получения заказа' %}</h3>
+					{% endif %}
+
+				</div>
+
+			</div>
+			{% endif %}
+
+		</div>
+
+	</section>
+
+{% endblock %}

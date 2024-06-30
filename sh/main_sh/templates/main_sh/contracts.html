@@ -1,0 +1,35 @@
+{% extends 'main_sh/blog.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Договоры' %}{% endblock %}
+
+{% block page_title %}
+    {% for contract in con %}
+        {{ contract.title }}
+    {% endfor %}
+{% endblock %}
+
+{% block right_content %}
+
+    {% for contract in con %}
+        <div class="contract__content">
+
+            {% for par in contract.paragraph.all %}
+
+                <p class="paragraph__title">{{ par.paragraph_number }}. {{ par.title }}</p>
+
+                <div class="paragraph__body">
+
+                    {% for p in par.point.all %}
+                        <p>{{ par.paragraph_number }}.{{ p.number }}. {{ p.text }}</p>
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'main_sh/order.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Заказ' %} #{{ order_number }}{% endblock %}
+
+{% block content %}
+<section class="search__order__or__garant">
+
+		<h1 class="search__order__or__garant__title">}{% trans 'Информация о заказе' %}</h1>
+
+
+		<div class="labelhor">
+
+                <form action="#" method="get" class="searching">
+
+                    <input name="q_order" placeholder="{% trans 'Введите номер заказа' %}" type="search">
+
+                    <button type="submit">{% trans 'Найти' %}</button>
+
+                </form>
+
+		</div>
+
+
+		<div class="flex__form__con">
+
+			<div class="info__search">
+					<p>{% trans 'Здесь будет информация о вашем заказе' %}.</p>
+			</div>
+
+
+
+		</div>
+
+	</section>
+
+{% endblock %}

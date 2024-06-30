@@ -1,0 +1,513 @@
+{% extends 'main_sh/base__about.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}О нас{% endblock %}
+
+{% block dop_content %}
+    <!--
+    <div class="cod__forms_1 cod__forms_display_1">
+
+		<div class="span__close__pose">
+			<span class="close__form"></span>
+		</div>
+
+		<div class="cod__forms_1__left">
+
+			<div class="info__left__block">
+
+				<h1>{% trans 'ЦОД в Норильскe Красноярский край' %}</h1>
+
+				<div class="info__table">
+
+					<div class="info__table__item">
+						<span class="info__table__gray">{% trans 'Стоимость' %}</span>
+						<span>{% trans '5,35₽/кВт' %}</span>
+					</div>
+
+					<div class="info__table__item">
+						<span class="info__table__gray">Uptime</span>
+						<span>99%</span>
+					</div>
+
+					<div class="info__table__item">
+						<span class="info__table__gray">{% trans 'Свободное место' %}</span>
+						<span><i>~</i>{% trans '750кВт' %}</span>
+					</div>
+
+					<div class="info__table__item">
+						<span class="info__table__gray">{% trans 'Локация' %}</span>
+						<span>{% trans 'Норильск' %}</span>
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<form action="#" method="post">
+
+				{% csrf_token %}
+
+				<div class="div__input">
+					{{ form1.name }}
+				</div>
+
+				<div class="div__input">
+					{{ form1.contact }}
+				</div>
+
+				<button type="submit">{% trans 'Оставить заявку' %}</button>
+
+				<p>{% trans 'Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфеденциальности' %}.</p>
+
+			</form>
+
+		</div>
+
+
+		<div class="cod__forms_1__right">
+			<img src="{% static 'cat/img/a.png' %}" alt="">
+
+			<div class="cod__forms__1__right__spans">
+				 <span>АУЕ</span>
+				<span>Скидки 50%</span>
+				<span>Скидки 50%</span>
+				<span>Скидки 50%</span>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="cod__forms_1 cod__forms_display_2">
+
+		<div class="span__close__pose span__close__pose2">
+			<span class="close__form close__form2"></span>
+		</div>
+
+		<div class="cod__forms_1__left">
+
+			<div class="info__left__block">
+
+				<h1>{% trans 'ЦОД в Норильскe Красноярский край' %}</h1>
+
+				<div class="info__table">
+
+					<div class="info__table__item">
+						<span class="info__table__gray">{% trans 'Стоимость' %}</span>
+						<span>{% trans '5,35₽/кВт' %}</span>
+					</div>
+
+					<div class="info__table__item">
+						<span class="info__table__gray">Uptime</span>
+						<span>99%</span>
+					</div>
+
+					<div class="info__table__item">
+						<span class="info__table__gray">{% trans 'Свободное место' %}</span>
+						<span><i>~</i>{% trans '750кВт' %}</span>
+					</div>
+
+					<div class="info__table__item">
+						<span class="info__table__gray">{% trans 'Локация' %}</span>
+						<span>{% trans 'Норильск' %}</span>
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<form action="#" method="post">
+
+				{% csrf_token %}
+
+				<div class="div__input">
+					{{ form2.name }}
+				</div>
+
+				<div class="div__input">
+					{{ form2.contact }}
+				</div>
+
+				<button type="submit">{% trans 'Оставить заявку' %}</button>
+
+				<p>{% trans 'Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфеденциальности' %}.</p>
+
+			</form>
+
+		</div>
+
+
+		<div class="cod__forms_1__right">
+			<img src="{% static 'cat/img/a.png' %}" alt="">
+
+			<div class="cod__forms__1__right__spans">
+				<span>Скидки 50%</span>
+				<span>Скидки 50%</span>
+				<span>Скидки 50%</span>
+				<span>Скидки 50%</span>
+			</div>
+		</div>
+
+	</div>
+
+    <div class="dark__blure">
+
+	</div>
+    -->
+{% endblock %}
+
+
+{% block content %}
+
+	{% include 'includes/slider_about.html' %}
+
+    <section class="main__text__aboutus">
+
+		<h1 class="main__text__aboutus__title">{% trans 'Немного о нас' %}</h1>
+
+
+		<div style="grid-template-columns: 1fr;" class="main__con__text__about">
+
+			<div style="padding-right: 15%;" class="main__text__aboutus__con">
+				<p>
+					{% trans 'Наша компания специализируется на поставке майнинг оборудования под ключ, обеспечивая надежность и поддержку на всех этапах майнинга. Опыт позволяет не только предоставлять качественное оборудование, но и помогать клиентам понять, как максимально эффективно использовать его потенциал. Предлагая услуги, начиная с оценки потребностей клиентов и заканчивая технической поддержкой в эксплуатации майнеров. Наши менеджеры предоставляют экспертную консультацию и осуществляют индивидуальный подбор оборудования, учитывая ваши требования и цели. У нас вы сможете приобрести майнеры по выгодной цене, так же если у вас есть проблемы с сетью на локации, вы сможете вместе с майнерами купить стабилизатор напряжения. Или если на предполагаемой локации цена за кВТ/час слишком высокая, Вы можете разместить купленное оборудование в наших дата центрах' %}.
+
+				</p>
+
+			</div>
+
+			<div style="display: none;" class="main__text__aboutus__img__con">
+
+				<h1 class="number_one">{% trans 'Поставщик #1' %}</h1>
+
+				<img src="img/about.jpg" alt="">
+			</div>
+
+		</div>
+
+	</section>
+
+
+
+	<div class="how__we__work">
+
+		<div class="how__we__work__main__con">
+
+			<h1 class="how__we__work__title">{% trans 'Уже 1500+ довольных клиентов' %}</h1>
+
+			<div class="tegs__block">
+				{% for n in news_tag %}
+					<a href="{{ n.get_absolute_url }}">{{ n.title }}</a>
+				{% endfor %}
+				<a class="last__teg__news" href="{% url 'main_page:blog' %}">{% trans 'Все новости' %}</a>
+			</div>
+
+
+			<div class="block___steps__we__work">
+
+				<div class="step__item__we__work no_bg">
+
+					<h1>{% trans 'Что мы делаем' %} <br> {% trans 'что бы быть #1?' %}</h1>
+
+				</div>
+
+				{% for s in step %}
+					<div class="step__item__we__work">
+
+						<div class="step__number__we__work">{{ s.num }}</div>
+
+						<div class="step__description__we__work">
+							<h2>{{ s.title }}</h2>
+							<p>{{ s.description }}</p>
+						</div>
+
+					</div>
+				{% endfor %}
+
+			</div>
+
+
+
+			<div class="step__footer__we__work">
+
+				<div class="desc__step__footer">
+					<h1>{% trans 'Отслеживайте свой закай онлайн' %}!</h1>
+					<p>
+						<p>{% trans 'После оплаты оборудования, личный менеджер будет консультироваь вас на каждом этапе доставки' %}.</p>
+						<p>{% trans 'Так же вы сможете делать это самостоятельно онлайн в разделе' %}
+						 "о заказе".</p>  </p>
+					<a href="{% url 'main_page:check_order' %}">{% trans 'Найти свой заказ' %}</a>
+				</div>
+
+
+
+				<div class="img__step__footer">
+					<svg width="" height="" viewBox="0 0 823 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="13" cy="201" r="13" fill="white"/>
+						<circle cx="797.5" cy="77.5" r="22.5" fill="white"/>
+						<ellipse cx="36.1969" cy="196.329" rx="6.13553" ry="4.90843" transform="rotate(-15 36.1969 196.329)" fill="white"/>
+						<ellipse cx="79.293" cy="179.813" rx="6.55046" ry="5.24037" transform="rotate(-30 79.293 179.813)" fill="white"/>
+						<ellipse cx="116.293" cy="152.813" rx="6.55046" ry="5.24037" transform="rotate(-30 116.293 152.813)" fill="white"/>
+						<ellipse cx="134.009" cy="137.546" rx="6.32588" ry="5.0607" transform="rotate(-45 134.009 137.546)" fill="white"/>
+						<ellipse cx="151.052" cy="121.052" rx="6.32588" ry="5.0607" transform="rotate(-45 151.052 121.052)" fill="white"/>
+						<ellipse cx="167.052" cy="105.052" rx="6.32588" ry="5.0607" transform="rotate(-45 167.052 105.052)" fill="white"/>
+						<ellipse cx="183.009" cy="88.5457" rx="6.32588" ry="5.0607" transform="rotate(-30 183.009 88.5457)" fill="white"/>
+						<ellipse cx="200.052" cy="72.0516" rx="6.32588" ry="5.0607" transform="rotate(-45 200.052 72.0516)" fill="white"/>
+						<ellipse cx="217.009" cy="56.5457" rx="6.32588" ry="5.0607" transform="rotate(-30 217.009 56.5457)" fill="white"/>
+						<ellipse cx="253.009" cy="27.5457" rx="6.32588" ry="5.0607" transform="rotate(-30 253.009 27.5457)" fill="white"/>
+						<ellipse cx="318" cy="5" rx="6" ry="5" fill="white"/>
+						<ellipse cx="341" cy="7" rx="6" ry="5" fill="white"/>
+						<ellipse cx="362.09" cy="14.3825" rx="6" ry="5" transform="rotate(15 362.09 14.3825)" fill="white"/>
+						<ellipse cx="383.09" cy="24.3825" rx="6" ry="5" transform="rotate(15 383.09 24.3825)" fill="white"/>
+						<ellipse cx="402.517" cy="37.6292" rx="6.49342" ry="5" transform="rotate(30 402.517 37.6292)" fill="white"/>
+						<ellipse cx="419.123" cy="51.5768" rx="6.49342" ry="5" transform="rotate(30 419.123 51.5768)" fill="white"/>
+						<ellipse cx="437.123" cy="68.5768" rx="6.49342" ry="5" transform="rotate(30 437.123 68.5768)" fill="white"/>
+						<ellipse cx="453.123" cy="84.5768" rx="6.49342" ry="5" transform="rotate(30 453.123 84.5768)" fill="white"/>
+						<ellipse cx="470.123" cy="100.577" rx="6.49342" ry="5" transform="rotate(45 470.123 100.577)" fill="white"/>
+						<ellipse cx="486.127" cy="117.127" rx="6.49342" ry="5" transform="rotate(45 486.127 117.127)" fill="white"/>
+						<ellipse cx="503.127" cy="133.127" rx="6.49342" ry="5" transform="rotate(45 503.127 133.127)" fill="white"/>
+						<ellipse cx="520.127" cy="149.127" rx="6.49342" ry="5" transform="rotate(45 520.127 149.127)" fill="white"/>
+						<ellipse cx="537.817" cy="163.817" rx="6.05462" ry="5" transform="rotate(45 537.817 163.817)" fill="white"/>
+						<ellipse cx="556.817" cy="176.817" rx="6.05462" ry="5" transform="rotate(38.5561 556.817 176.817)" fill="white"/>
+						<ellipse cx="577.617" cy="188.119" rx="6.05462" ry="5" transform="rotate(25.498 577.617 188.119)" fill="white"/>
+						<ellipse cx="599.293" cy="195.611" rx="6.05462" ry="5" transform="rotate(17.7978 599.293 195.611)" fill="white"/>
+						<ellipse cx="622.055" cy="199" rx="6.05462" ry="5" fill="white"/>
+						<ellipse cx="645.142" cy="196.397" rx="6.05462" ry="5" transform="rotate(-15 645.142 196.397)" fill="white"/>
+						<ellipse cx="667.142" cy="190.397" rx="6.05462" ry="5" transform="rotate(-30 667.142 190.397)" fill="white"/>
+						<ellipse cx="707.743" cy="167.357" rx="6.05462" ry="5" transform="rotate(-30 707.743 167.357)" fill="white"/>
+						<ellipse cx="687.743" cy="180.357" rx="6.05462" ry="5" transform="rotate(-30 687.743 180.357)" fill="white"/>
+						<ellipse cx="725.743" cy="152.357" rx="6.05462" ry="5" transform="rotate(-30 725.743 152.357)" fill="white"/>
+						<ellipse cx="742.743" cy="137.357" rx="6.05462" ry="5" transform="rotate(-37.3764 742.743 137.357)" fill="white"/>
+						<ellipse cx="759.847" cy="121.649" rx="6.05462" ry="5" transform="rotate(-44.7776 759.847 121.649)" fill="white"/>
+						<ellipse cx="775.82" cy="104.814" rx="6.05462" ry="5" transform="rotate(-44.7776 775.82 104.814)" fill="white"/>
+						<ellipse cx="294.794" cy="7.64734" rx="6.09244" ry="5.1034" transform="rotate(-15 294.794 7.64734)" fill="white"/>
+						<ellipse cx="273.009" cy="15.5457" rx="6.32588" ry="5.0607" transform="rotate(-30 273.009 15.5457)" fill="white"/>
+						<ellipse cx="235.009" cy="40.5457" rx="6.32588" ry="5.0607" transform="rotate(-30 235.009 40.5457)" fill="white"/>
+						<ellipse cx="98.293" cy="166.813" rx="6.55046" ry="5.24037" transform="rotate(-30 98.293 166.813)" fill="white"/>
+						<ellipse cx="58.138" cy="189.596" rx="6.39387" ry="5.1151" transform="rotate(-15 58.138 189.596)" fill="white"/>
+						</svg>
+
+					<img class="img__img__step__footer" src="{% static 'cat/img/anons.png' %}" alt="">
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<section class="servisse">
+		<img src="{% static 'cat/img/6.png' %}" alt="">
+		<h1>{% trans 'Выгодные условия' %} <br> {% trans 'на оптовый заказ' %}</h1>
+		<span>{% trans 'Гарантия 1 года на всё оборудование' %}!</span>
+
+	</section>
+
+
+
+	<section class="why__u__can__trast">
+
+		<h1 class="why__u__can__trast__title">{% trans 'Почему нам можно доверять' %}</h1>
+
+
+		<div class="trust__con">
+
+			{% for t in trust %}
+				<div class="trust__card">
+					<h2>{{ t.title }}</h2>
+					<p>{{ t.description }}</p>
+				</div>
+			{% endfor %}
+
+		</div>
+
+	</section>
+
+
+
+	<section class="data__center">
+
+		<h1 class="data__center__title">{% trans 'Наши Дата-центры' %}</h1>
+
+
+		<div class="data__center__cod__con">
+
+			<div class="cod__card">
+
+				<div class="cod__card__first__block">
+					<a class="cod__card__first__block__1" href="{% url 'main_page:sorry' %}">{% trans 'Оставить заявку' %}
+						<span>
+							<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 2L26 11.5L15 21" stroke="" stroke-width="2"/>
+							<path d="M0 11.5H25" stroke="" stroke-width="2"/>
+							</svg>
+						</span>
+					</a>
+				</div>
+
+				<div class="cod__card__second__block">
+
+					<div class="mesta">
+						<span class="norm"></span>
+						<p>{% trans 'Много свободных мест' %}</p>
+					</div>
+
+					<!--<ul>
+						<li>Юридически оформленное сотрудничество</li>
+						<li>Круглосуточная охрана</li>
+						<li>Поддержка 24/7</li>
+						<li>Uptime: 99%</li>
+						<li>Стоимость: 5,35 ₽/кВт</li>
+					</ul>-->
+
+					<img src="{% static 'cat/img/1.jpg' %}" alt="">
+
+					<div class="blure__cod"></div>
+
+				</div>
+
+				<div class="cod__card__third__block">
+
+					<div class="cod__card__third__block__left">
+						<h2>{% trans 'Львов' %}</h2>
+						<!--<p>{% trans 'Красноярский край' %}</p>-->
+					</div>
+
+					<div class="cod__card__third__block__right">
+						<p><span>{% trans '3,35' %}</span> {% trans '₴/кВт' %}</p>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="cod__card">
+
+				<div class="cod__card__first__block">
+					<a class="cod__card__first__block__2" href="{% url 'main_page:sorry' %}">{% trans 'Оставить заявку' %}
+						<span>
+							<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 2L26 11.5L15 21" stroke="" stroke-width="2"/>
+							<path d="M0 11.5H25" stroke="" stroke-width="2"/>
+							</svg>
+						</span>
+					</a>
+				</div>
+
+				<div class="cod__card__second__block">
+
+					<div class="mesta">
+						<span class="ne_norm"></span>
+						<p>{% trans 'Мест почти нет' %}</p>
+					</div>
+
+					<!--<ul>
+						<li>Юридически оформленное сотрудничество</li>
+						<li>Круглосуточная охрана</li>
+						<li>Поддержка 24/7</li>
+						<li>Uptime: 95%</li>
+						<li>Стоимость: 4,85 ₽/кВт</li>
+					</ul>-->
+
+					<img src="{% static 'cat/img/3.jpg' %}" alt="">
+
+					<div class="blure__cod"></div>
+
+				</div>
+
+				<div class="cod__card__third__block">
+
+					<div class="cod__card__third__block__left">
+						<h2>{% trans 'Луцк' %}</h2>
+						<!--<p>{% trans 'Красноярский край' %}</p>-->
+					</div>
+
+					<div class="cod__card__third__block__right">
+						<p><span>{% trans '3,85' %}</span>{% trans '₴/кВт' %}</p>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<section class="data__center__slider">
+
+		<h1 class="data__center__slider__title">{% trans 'Фото с локации' %}</h1>
+
+		<div class="swiper data__center__slider__1">
+		  <!-- Additional required wrapper -->
+		  <div class="swiper-wrapper">
+		    <!-- Slides -->
+		    {% for p in photo %}
+			  	<div class="swiper-slide swiper-slide__cod">
+					<img src="{{ p.img.url }}" alt="">
+				</div>
+			{% endfor %}
+
+		  </div>
+
+		  <div class="con__btns__cod">
+
+		  	<div id="pr" class=" swiper-button-prev__cod">
+		  		<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M15 2L26 11.5L15 21" stroke="#fff" stroke-width="3"/>
+				<path d="M0 11.5H25" stroke="#fff" stroke-width="3"/>
+				</svg>
+		  	</div>
+
+		  	<div id="nt" class=" swiper-button-next__cod">
+		  		<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M15 2L26 11.5L15 21" stroke="#fff" stroke-width="3"/>
+				<path d="M0 11.5H25" stroke="#fff" stroke-width="3"/>
+				</svg>
+		  	</div>
+
+		  </div>
+
+		</div>
+
+		<div class="swiper data__center__slider__2">
+		  <!-- Additional required wrapper -->
+		  <div class="swiper-wrapper">
+		    <!-- Slides -->
+		    {% for p in photo %}
+			  	<div class="swiper-slide swiper-slide__cod">
+					<img src="{{ p.img.url }}" alt="">
+				</div>
+			{% endfor %}
+
+		  </div>
+
+		  <div class="con__btns__cod">
+
+		  	<div id="pr" class="swiper-button-prev__cod2 swiper-button-prev__cod">
+		  		<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M15 2L26 11.5L15 21" stroke="#fff" stroke-width="3"/>
+				<path d="M0 11.5H25" stroke="#fff" stroke-width="3"/>
+				</svg>
+		  	</div>
+
+		  	<div id="nt" class="swiper-button-next__cod2 swiper-button-next__cod">
+		  		<svg width="" height="" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M15 2L26 11.5L15 21" stroke="#fff" stroke-width="3"/>
+				<path d="M0 11.5H25" stroke="#fff" stroke-width="3"/>
+				</svg>
+		  	</div>
+
+		  </div>
+
+		</div>
+
+	</section>
+{% endblock %}
+
+

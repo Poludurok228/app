@@ -1,0 +1,91 @@
+{% extends 'cat/base.html' %}
+{% load i18n %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block favourite_count %}
+
+{{ favourites_count }}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="news_blog news_blog__detail__news">
+
+		<div class="detail__left__side">
+
+			<h1 class="main__title__detail__news">{{ news.title }}</h1>
+
+			<p class="time__detail">
+				<span>
+					<svg width="" height="" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M100.5 41.5C100.5 64.1504 100.5 76.8496 100.5 99.5C114.559 109.068 122.441 114.432 136.5 124" stroke="black" stroke-width="9" stroke-linecap="round"/>
+					<circle cx="100" cy="100" r="97" stroke="black" stroke-width="12"/>
+					</svg>
+				</span>
+				{{ news.created }}
+			</p>
+
+			<p class="main__text__detail__news">{{ news.description }}</p>
+
+			<img src="{{ news.img.url }}" alt="" class="main__news__detail__img">
+
+			{% for p in news.paragraphs.all %}
+				<div class="paragraph__detail__news">
+
+					<h2>{{ p.title }}</h2>
+
+					<p>{{ p.text }}</p>
+
+				</div>
+			{% endfor %}
+
+			<div class="tegs__conuch">
+
+				<h2>{% trans 'Новости на тему' %}:</h2>
+
+				{% for t in news.tegs.all %}
+					<a href="{{ t.get_absolute_url }}">{{ t.title }}</a>
+				{% endfor %}
+			</div>
+
+		</div>
+
+		<div class="detail__right__side">
+
+			<div class="saim__detail__news stikson__right__side">
+
+				<h2>{% trans 'Читайте также' %}</h2>
+
+				{% for sn in same_news %}
+
+					<div class="saim__con__news">
+
+						<div class="saim__con__news__title"><a href="{{ sn.get_absolute_url }}">{{ sn.title }}</a></div>
+
+						<p class="time__detail margin__unset">
+							<span>
+								<svg width="" height="" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M100.5 41.5C100.5 64.1504 100.5 76.8496 100.5 99.5C114.559 109.068 122.441 114.432 136.5 124" stroke="black" stroke-width="9" stroke-linecap="round"/>
+								<circle cx="100" cy="100" r="97" stroke="black" stroke-width="12"/>
+								</svg>
+							</span>
+							{{ sn.created }}
+						</p>
+
+					</div>
+
+				{% empty %}
+					<p>{% trans 'Нет похожих новостей' %}</p>
+
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'cat/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Блог' %}{% endblock %}
+
+
+{% block favourite_count %}
+
+{{ favourites_count }}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<section class="news_blog">
+
+		<h1 class="news__title">{% block page_title %}{% trans 'Новости' %}{% endblock %}</h1>
+
+
+		<div class="news__blog__con">
+
+			{% block right_content %}
+			<div class="left__news__blog__con">
+
+				{% for n in page_obj %}
+					<div class="news__card">
+
+						<div class="news__card__img__con">
+							<img src="{{ n.img.url }}" alt="">
+						</div>
+
+						<div class="news__card__text__con">
+
+							<h2>{{ n.title }}</h2>
+
+							<p>{{ n.description|truncatewords:23 }}</p>
+
+							<a href="{{ n.get_absolute_url }}">{% trans 'Читать далее' %}</a>
+
+						</div>
+
+					</div>
+				{% endfor %}
+
+
+				<div class="pagination news__paginator">
+
+					<span class="space"></span>
+
+					<ul>
+						{% for p in page_obj.paginator.page_range %}
+							<li class="{% if p == page_obj.number %}active_p{% endif %}">
+							  <a href="?page={{ p }}&{{ query_string }}">{{ p }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+
+				</div>
+
+
+
+			</div>
+			{% endblock %}
+
+			<div class="right__news__blog__con">
+				<div class="form__pred__zakaz position__stiky">
+
+					<form action="{% url 'main_page:blog' %}" method="post">
+						{% csrf_token %}
+						<h1>{% trans 'Оставить заявку' %}</h1>
+
+						<div class="form__pred__zakaz__input">
+							{{ form.name }}
+						</div>
+
+						<div class="form__pred__zakaz__input">
+							{{ form.phone }}
+						</div>
+
+						<button>{% trans 'Отправить' %}</button>
+
+						<p>{% trans 'Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфиденциальности' %}.</p>
+					</form>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</section>
+
+
+{% block tg %}
+<section class="telegram__section">
+
+		<svg viewBox="0 0 55 55" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#fff" stroke-width=".3"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs></defs><path class="cls-1" d="M40.83,8.48c1.14,0,2,1,1.54,2.86l-5.58,26.3c-.39,1.87-1.52,2.32-3.08,1.45L20.4,29.26a.4.4,0,0,1,0-.65L35.77,14.73c.7-.62-.15-.92-1.07-.36L15.41,26.54a.46.46,0,0,1-.4.05L6.82,24C5,23.47,5,22.22,7.23,21.33L40,8.69a2.16,2.16,0,0,1,.83-.21Z"></path></g></svg>
+
+		<div class="info__text__tg">
+
+			<p>@CryptoTech</p>
+
+			<h2>{% trans 'Наш Telegram канал' %}</h2>
+
+		</div>
+
+
+		<div class="link__tg">
+
+			<a class="cursor-scale" href="https://t.me/UAcryptotech">{% trans 'Перейти' %}</a>
+
+		</div>
+
+	</section>
+{% endblock %}
+
+{% endblock %}

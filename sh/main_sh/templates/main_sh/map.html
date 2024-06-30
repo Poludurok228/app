@@ -1,0 +1,42 @@
+{% extends 'main_sh/blog.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Контакты' %}{% endblock %}
+
+{% block page_title %}{% trans 'Контакты' %}{% endblock %}
+
+
+{% block right_content %}
+<section class="map__section">
+    <div style="background: #fff;
+		border-radius: calc(var(--index) * .5);
+		padding: calc(var(--index) * 4) calc(var(--index) * 1); border: 1px solid rgba(0,0,0,0.2)" class="map__section__text">
+        <h2 style="margin-bottom: calc(var(--index) * 1); font-size: max(calc(var(--index) * 1.5), 20px); margin-bottom:calc(var(--index) * 2);">{% trans 'Склад в городе Одесса' %}</h2>
+
+       <p>{% trans 'Украина, г. Одесса, Малиновский район, Базовая ул.' %}</p>
+
+        <div style="display: flex;align-items: start;justify-content: start;flex-direction: column;gap: calc(var(--index) * .3);margin: calc(var(--index) * 1) 0;" class="first__header__block__contact">
+
+				<a style="color: #000;" href="mailto:crypto.tech@mail.ru">
+					<svg style="stroke: #000;" width="" height="" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.5 7.49995C9.5 11 12 12.5 12.5 12.5C13 12.5 16.461 10.1213 18.5 7.49995M6.5 1.00001C2.5 0.999993 1 2.19995 1 6.99995C1 11.8 1 15.6666 1 17C1 18.3333 1.8 21 5 21C8.2 21 15.6667 21 19 21C20.6667 21 24 20.2 24 17C24 13.8 24 8.99997 24 6.99995C24 1.99995 23 1 19 1L6.5 1.00001Z" stroke="" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+					crypto.tech@mail.ru
+				</a>
+				<a style="color: #000;" href="https://t.me/+Y_aw8GoDVBAwYWJi">
+					<svg style="stroke: #000;" width="" height="" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10 15.4999C11 16.4999 15.5 20.4999 17.5 22.4999C19.5 24.4999 21.1667 23.8333 21.5 22.4999C22.3333 18.4999 24 8.24994 25 3.99995C26 -0.250036 23.5 0.999927 21.5 1.99995C19.5 2.99998 7.5 7.89994 3.50001 9.49994C-0.499992 10.6999 1.50001 12.3333 3.00001 12.9999L10 15.4999ZM10 15.4999C13.71 11.9852 21.5 4.49993 19.5 6.49993" stroke-width="2" stroke=""/>
+					</svg>
+					@CryptoTech
+				</a>
+
+			</div>
+
+
+        <!--<p style="color: rgba(0,0,0, .6);">{% trans 'Дата-центр: временно не работают!' %}.</p>-->
+    </div>
+    <img style="width: 100%; margin-top: calc(var(--index) * 1); border-radius: calc(var(--index) * .5);" src="{% static 'cat/img/map3.png' %}" alt="">
+</section>
+{% endblock %}
+
