@@ -1,0 +1,63 @@
+.telegram__section {
+	width: 95%;
+	margin: calc(var(--index) * 3) auto;
+	background: var(--main_color);
+	position: relative;
+	overflow: hidden;
+	padding: calc(var(--index) * 2);
+	border-radius: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.telegram__section svg {
+	width: max(calc(var(--index) * 30), 250px);
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translateY(-50%);
+}
+
+
+.info__text__tg p,
+.info__text__tg h2 {
+	color: #fff;
+}
+
+.info__text__tg {
+	display: flex;
+	align-items: center;
+	gap: calc(var(--index) * 1);
+}
+
+.link__tg a {
+	color: #fff;
+	font-size: max(calc(var(--index) * .5), 15px);
+	border-radius: 100px;
+	border: 1px solid #fff;
+	padding: calc(var(--index) * .2) calc(var(--index) * 1);
+	background: var(--main_color);
+}
+
+
+@media screen and (max-width: 510px) {
+	.telegram__section svg {
+		display: none;
+	}
+
+	.info__text__tg {
+		flex-direction: column-reverse;
+		justify-content: start;
+	}
+
+	.info__text__tg p {
+		width: 100%;
+	}
+
+	.telegram__section {
+		width: 100%;
+		border-radius: 0px;
+	}
+}

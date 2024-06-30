@@ -1,0 +1,317 @@
+.tabs {
+    width: 100%;
+}
+
+.tab-item.active {
+    color: var(--main_color);
+    font-weight: bold;
+    position: relative;
+}
+
+.tab-item.active::before {
+    content: '';
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background-color: var(--main_color);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bb_animate .2s forwards;
+}
+
+@keyframes bb_animate {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.tab-header {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 94%;
+    margin: 0 auto;
+    justify-content: center;
+    padding: calc(var(--index) * 3) 0 calc(var(--index) * 1) 0;
+    gap: calc(var(--index) * 1);
+}
+
+.tab-item {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    font-family: f3;
+}
+
+.tab-pane {
+    display: none;
+    margin-top: 10px;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-content {
+    padding: calc(var(--index) * 1) calc(var(--index) * 3) calc(var(--index) * 3) calc(var(--index) * 3);
+}
+
+.property__content__title,
+.property__content__description {
+    font-family: f3;
+}
+
+.property__content__description {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.property__content__title {
+    margin-bottom: calc(var(--index) * .3);
+}
+
+.property__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: calc(var(--index) * 3);
+    grid-row-gap: calc(var(--index) * 1);
+}
+
+.flx__drctn {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.flx__drctn .mini__property {
+    grid-row-gap: calc(var(--index) * 1) !important;
+    width: 60%;
+}
+
+
+.flx__drctn .form__pred__zakaz {
+    width: 35%;
+}
+
+.form__pred__zakaz {
+    background-color: #fff;
+    padding: calc(var(--index) * 1) calc(var(--index) * 2) calc(var(--index) * 1) calc(var(--index) * 1);
+    border-radius: calc(var(--index) * .1);
+}
+
+.form__pred__zakaz form h1 {
+    color: var(--main_color);
+    font-family: f3;
+    margin-bottom: calc(var(--index) * 1);
+}
+
+.form__pred__zakaz__input {
+    margin-bottom: calc(var(--index) * .5);
+}
+
+.form__pred__zakaz__input input {
+    all: unset;
+    width: 100%;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: calc(var(--index) * .2);
+    font-family: f3;
+    font-size: max(calc(var(--index) * .5), 13px);
+    transition: .2s;
+}
+
+.form__pred__zakaz__input input:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    transition: .2s;
+}
+
+.form__pred__zakaz__input input:focus {
+    border: 1px solid var(--main_color);
+    transition: .2s;
+}
+
+.form__pred__zakaz form button {
+    all: unset;
+    background-color: var(--main_color);
+    padding: calc(var(--index) * .3) calc(var(--index) * 1);
+    border-radius: 100px;
+    color: #fff;
+    font-size: calc(var(--index) * .6);
+    margin-top: calc(var(--index) * .5);
+    cursor: pointer;
+    font-family: f3;
+}
+
+.form__pred__zakaz form p {
+    color: #b5b5c6;
+    font-size: calc(var(--index) * .4);
+    margin-top: calc(var(--index) * .4);
+}  
+
+
+
+.mail__tab {
+    display: grid;
+    grid-template-columns: 1fr .6fr !important;
+    grid-column-gap: calc(var(--index) * 1);
+}
+
+.left__main__mail__form {
+    width: 100%;
+    background-color: #fff;
+}
+
+.grid__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: calc(var(--index) * 2);
+    margin-top: calc(var(--index) * .3);
+}
+
+.left__main__mail__form {
+    padding: calc(var(--index) * 1) calc(var(--index) * 2);
+    border-radius: calc(var(--index) * .1);
+}
+
+.left__main__mail__form form button {
+    all: unset;
+    display: block;
+    background-color: var(--main_color);
+    padding: calc(var(--index) * .3) calc(var(--index) * 1);
+    border-radius: 100px;
+    color: #fff;
+    font-size: max(calc(var(--index) * .5), 13px);
+    margin-top: calc(var(--index) * .5);
+    cursor: pointer;
+    font-family: f3;
+}
+
+.left__main__mail__form form h1 {
+    color: var(--main_color);
+    font-family: f3;
+    margin-bottom: calc(var(--index) * 1);
+}
+
+.left__main__mail__form form textarea {
+    all: unset;
+    font-family: f3;
+    margin-bottom: calc(var(--index) * 1);
+    width: 98.8%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: calc(var(--index) * .5) calc(var(--index) * .5);
+    font-size: max(calc(var(--index) * .5), 13px);
+    min-height: calc(var(--index) * 10);
+}
+
+.left__main__mail__form form textarea:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    transition: .2s;
+}
+
+.left__main__mail__form form textarea:focus {
+    border: 1px solid var(--main_color);
+    transition: .2s;
+}
+
+
+
+
+
+
+/* MEDIA */
+
+
+
+
+@media screen and (max-width: 965px) {
+    .flx__drctn .mini__property {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .property__content__title {
+        font-size: max(calc(var(--index) * 2), 20px);
+    }
+
+    .property__content__description {
+        font-size: max(calc(var(--index) * .5), 13px);
+    }
+
+    .property__content {
+        grid-template-columns: 1fr;
+        grid-column-gap: max(calc(var(--index) * 3), 30px);
+    }
+
+    .tab-item {
+        font-size: max(calc(var(--index) * .5), 13px);
+        width: fit-content;
+        text-align: center;
+        padding: 5px 0;
+    }
+
+    .tab-header {
+        padding: 0;
+        gap: 10px;
+    }
+
+    .mail__tab .form__pred__zakaz {
+        display: none;
+    }
+
+    .mail__tab {
+        display: block;
+    }
+
+    .left__main__mail__form {
+        width: 100% !important;
+    }
+
+    .left__main__mail__form form {
+        width: 100% !important;
+        padding: 20px;
+    }
+}
+
+
+
+@media screen and (max-width: 750px) {
+    .flx__drctn .mini__property {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .flx__drctn {
+        display: block;
+    }
+
+    .form__pred__zakaz {
+        width: 100% !important;
+        margin: 20px 0;
+    }
+
+    .form__pred__zakaz form {
+        width: 100%;
+        display: block;
+         padding: 20px;
+    }
+
+    .form__pred__zakaz form input {
+        font-size: max(calc(var(--index) * .5), 13px);
+    }
+
+    .form__pred__zakaz form button {
+        font-size: max(calc(var(--index) * .5), 13px);
+    }
+
+    .grid__form {
+        display: block;
+    }
+}
