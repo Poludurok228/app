@@ -1,0 +1,642 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{% include 'includes/styles_links.html' %}
+
+	<title>{% block title %}{% endblock %}</title>
+
+	<style>
+
+		.message_absolute {
+	border-radius: calc(var(--index) * .1);
+	padding: max(calc(var(--index) * 1), 20px) max(calc(var(--index) * 1), 20px);
+	font-size: max(calc(var(--index) * .45), 12px);
+	position: fixed;
+	top: 10px;
+	right: 20px;
+	height: auto;
+	width: max(calc(var(--index) * 16), 200px);
+	z-index: 99999999999999999;
+	line-height: 1.6;
+	border: 1px solid rgba(0, 0, 0, .2);
+	opacity: .9;
+}
+
+.message_absolute.info {
+	color: #fff;
+	background-color: var(--cursor_color);
+}
+
+.message_absolute.error {
+	color: #000;
+	background-color: var(--slide_color4);
+}
+
+.message_absolute__close {
+	width: 15px;
+	height: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	cursor: pointer;
+}
+
+.message_absolute__close p {
+	width: 100%;
+	height: 2px;
+	position: relative;
+	rotate: 45deg;
+	border-radius: 100px;
+}
+
+.message_absolute.info .message_absolute__close p {
+	background-color: #fff;
+}
+
+.message_absolute.error .message_absolute__close p {
+	background-color: #000;
+}
+
+.message_absolute__close p::after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	position: absolute;
+	transform-origin: center center;
+	rotate: 90deg;
+	border-radius: 100px;
+}
+
+.message_absolute.info .message_absolute__close p::after {
+	background-color: #fff;
+}
+
+.message_absolute.error .message_absolute__close p::after {
+	background-color: #000;
+}
+
+		.add__favourite__btn {
+			margin-top: calc(var(--index) * 2);
+			display: block;
+			width: fit-content;
+			border-radius: 100px;
+			background-color: var(--cursor_color);
+			color: #fff;
+			padding: calc(var(--index) * .5) calc(var(--index) * 1);
+			font-size: max(calc(var(--index) * .5), 12px);
+		}
+
+		.nothing {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.pagination {
+		  display: grid;
+		  grid-template-columns: .4fr 1fr;
+		  margin-bottom: max(40px, 10px);
+		}
+
+		.pagination ul li {
+		  list-style: none;
+		  background-color: #fff;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  width: max(calc(var(--index) * 1), 30px);
+		  height: max(calc(var(--index) * 1), 30px);
+		  border-radius: 50%;
+		  border: 1px solid rgba(0, 0, 0, .2);
+		  overflow: hidden;
+		}
+
+		.pagination ul li a {
+		  color: #000;
+		  width: 100%;
+		  height: 100%;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  font-size: max(calc(var(--index) * .5), 13px);
+		}
+
+		.pagination ul {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  gap: max(7px, 3px);
+		}
+
+		.pagination ul li.active_p {
+		  background-color: #0052cd;
+		  border: 1px solid rgba(0, 0, 0, 0);
+		}
+
+		.pagination ul li.active_p a {
+		  color: #fff;
+		}
+
+		@media screen and (max-width: 800px) {
+		  .pagination {
+			grid-template-columns: 1fr;
+		  }
+		}
+
+		.asic__firms a img {
+			width: 190%;
+		}
+
+
+		.news_blog__detail__news {
+	display: grid;
+	grid-template-columns: .8fr .5fr;
+	grid-column-gap: calc(var(--index) * 2);
+}
+
+.main__title__detail__news {
+	font-size: max(calc(var(--index) * 2.5), 25px);
+	font-family: f6;
+}
+
+.time__detail {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: calc(var(--index) * .1);
+	margin: calc(var(--index) * 1.5) 0;
+	opacity: .6;
+	font-size: max(calc(var(--index) * .4), 11px);
+}
+
+.time__detail svg {
+	width: 20px;
+}
+
+
+.main__text__detail__news {
+	margin-bottom: calc(var(--index) * 2);
+	font-size: max(calc(var(--index) * .6), 14px);
+	line-height: 1.5;
+}
+
+.main__news__detail__img {
+	width: 100%;
+	border-radius: calc(var(--index) * .5);
+}
+
+.paragraph__detail__news {
+	margin-top: calc(var(--index) * 2);
+}
+
+.paragraph__detail__news h2 {
+	margin-bottom: calc(var(--index) * .5);
+	font-family: f6;
+	font-size: max(calc(var(--index) * 1.5), 20px);
+}
+
+.paragraph__detail__news p {
+	font-size: max(calc(var(--index) * .45), 13px);
+	line-height: 1.7;
+	opacity: .8;
+}
+
+
+.saim__detail__news {
+	width: 100%;
+	background: #fff;
+	border-radius: calc(var(--index) * .5);
+	padding: calc(var(--index) * 2) calc(var(--index) * 1);
+}
+
+.margin__unset {
+	margin: unset;
+}
+
+.saim__detail__news h2 {
+	font-size: max(calc(var(--index) * 1.5), 20px);
+	font-family: f6;
+	color: var(--cursor_color);
+	margin-bottom: calc(var(--index) * 1);
+}
+
+.saim__con__news {
+	padding: calc(var(--index) * 1.5) calc(var(--index) * 1);
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--index) * .5);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.saim__con__news__title a {
+	font-size: calc(var(--index) * 1);
+	font-family: f6;
+	color: #000;
+	font-weight: bold;
+	transition: .2s;
+}
+
+.saim__con__news__title a:hover {
+	color: var(--cursor_color);
+	transition: .2s;
+}
+
+
+.borderok {
+	border: 1px solid #000;
+}
+
+
+.tegs__conuch {
+	margin-top: calc(var(--index) * 2);
+}
+
+.tegs__conuch h2 {
+	margin-bottom: max(calc(var(--index) * .5), 15px);
+	font-family: f6;
+	font-size: max(calc(var(--index) * 1), 18px);
+
+}
+
+.tegs__conuch a {
+	display: inline-block;
+	padding: calc(var(--index) * .3) calc(var(--index) * 1);
+	color: #fff;
+	background: var(--cursor_color);
+	border-radius: 100px;
+	font-size: max(calc(var(--index) * .4), 11px);
+	margin-right: 5px;
+	transition: .2s;
+}
+
+.tegs__conuch a:hover {
+	transition: .2s;
+	background: #156EF3;
+}
+
+.tabulatoria {
+	font-size: max(calc(var(--index) * .5), 13px) !important;
+	color: red;
+}
+
+.detail__right__side {
+	position: relative;
+}
+
+.stikson__right__side {
+	position: sticky;
+	top: 5vh;
+}
+
+.stabilizer__con {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.a__bottom__hover {
+			font-size: max(calc(var(--index) * .4), 12px) !important;
+		}
+		.second__footer__block a {
+			font-size: max(calc(var(--index) * .4), 12px) !important;
+		}
+
+
+@media screen and (max-width: 1100px) {
+	.stabilizer__con {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.news_blog__detail__news {
+		grid-template-columns: 1fr;
+	}
+
+	.detail__right__side {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.stabilizer__con {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.stabilizer__con {
+		grid-template-columns: 1fr;
+	}
+}
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			scroll-behavior: smooth;
+		}
+
+		.brand__stabilizer__a h2 {
+			color: var(--main_color);
+			font-family: f6;
+			font-size: calc(var(--index) * 1);
+			text-transform: capitalize;
+		}
+
+		.asic__filter__card label {
+			font-size: max(calc(var(--index) * .35), 11px);
+		}
+
+		.asic__filter form {
+			width: auto;
+		}
+
+		.language_sveech {
+			all: unset;
+			padding: 7px 7px;
+			background: rgba(0,0,0,0);
+			text-transform: uppercase;
+			border: 1px solid rgba(0,0,0,0.3);
+			border-radius: 3px;
+			font-size: 13px;
+		}
+
+		.paragraph__title {
+			font-family: f6;
+			font-weight: bold;
+			font-size: max(calc(var(--index) * 1.2), 25px);
+			margin-bottom: max(calc(var(--index) * .1), 10px)
+		}
+
+		.paragraph__body {
+			margin-bottom: max(calc(var(--index) * 1), 17px);
+			display: flex;
+			flex-direction: column;
+			gap: 9px;
+			padding-left: 10px;
+		}
+
+		.paragraph__body p {
+			line-height: 1.7;
+		}
+
+
+	</style>
+	<link rel="icon" href="{% static 'cat/img/icon.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+
+
+	<div class="media__menu">
+
+		<div class="media__menu__btn"><span></span></div>
+
+
+		<div class="media__menu__links ">
+			{% include 'includes/main_links.html' %}
+		</div>
+
+	</div>
+
+	{% block dop_content %}
+	{% endblock %}
+
+
+	{% block media_filter %}
+	{% endblock %}
+
+
+	<section class="header__detail__section">
+
+
+		<div class="first__header__block">
+
+			<div style="display: flex; gap: 15px; align-items: center;">
+				<a href="{% url 'main_page:contract4' %}">{% trans 'Доставка и оплата' %} </a>
+				{% include 'includes/language_btn.html' %}
+			</div>
+
+			<div class="first__header__block__contact">
+
+				<a href="mailto:crypto.tech@mail.ru">
+					<svg width="" height="" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.5 7.49995C9.5 11 12 12.5 12.5 12.5C13 12.5 16.461 10.1213 18.5 7.49995M6.5 1.00001C2.5 0.999993 1 2.19995 1 6.99995C1 11.8 1 15.6666 1 17C1 18.3333 1.8 21 5 21C8.2 21 15.6667 21 19 21C20.6667 21 24 20.2 24 17C24 13.8 24 8.99997 24 6.99995C24 1.99995 23 1 19 1L6.5 1.00001Z" stroke="" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+					crypto.tech@mail.ru
+				</a>
+				<a href="https://t.me/+Y_aw8GoDVBAwYWJi">
+					<svg width="" height="" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10 15.4999C11 16.4999 15.5 20.4999 17.5 22.4999C19.5 24.4999 21.1667 23.8333 21.5 22.4999C22.3333 18.4999 24 8.24994 25 3.99995C26 -0.250036 23.5 0.999927 21.5 1.99995C19.5 2.99998 7.5 7.89994 3.50001 9.49994C-0.499992 10.6999 1.50001 12.3333 3.00001 12.9999L10 15.4999ZM10 15.4999C13.71 11.9852 21.5 4.49993 19.5 6.49993" stroke-width="2" stroke=""/>
+					</svg>
+					CryptoTech
+				</a>
+
+			</div>
+
+		</div>
+
+
+		<div class="second__header__block">
+
+			<div class="hero__logo">
+				<svg width="" height="" viewBox="0 0 188 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M50.5 21.5V2.5H135.5V21.5H104.5V109H81.5L81 21.5H50.5Z" fill="#1b1b1b"/>
+				<path d="M184 4H145.5V13H170.5L131.5 91.5L139 98L184 4Z" fill="#1b1b1b"/>
+				<path d="M40.5 12.5V3.5H3.5L33.5 65L37 51L18 12.5H40.5Z" fill="#1b1b1b"/>
+				<path d="M76.5 132.5L62.5 126.5L94 192L124.5 129L112 132.5L94 168L76.5 132.5Z" fill="#1b1b1b"/>
+				<path d="M50.5 21.5V2.5H135.5V21.5H104.5V109H81.5L81 21.5H50.5Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M184 4H145.5V13H170.5L131.5 91.5L139 98L184 4Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M40.5 12.5V3.5H3.5L33.5 65L37 51L18 12.5H40.5Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M76.5 132.5L62.5 126.5L94 192L124.5 129L112 132.5L94 168L76.5 132.5Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M43 60C49.8 38.4 69.5 30 78.5 28.5V49.5C75.3 50.7 71.5 55 70 57C67.3333 59.5 62.4 67.9 64 81.5C65.6 95.1 76 102.5 81 104.5C82 105.167 86.8 106.7 98 107.5C109.2 108.3 117.667 100.5 120.5 96.5C122.833 98.8333 129 104.9 135 110.5C131.5 115 116 127 91.5 127.5C71.9 127.9 58.6667 117.333 54.5 112C47.8333 103.667 36.2 81.6 43 60Z" fill="#0052cd" stroke="#0052cd"/>
+				<path d="M107.5 46.5V27.5C120.207 29.0752 126.104 32.7514 135 43L120 56C116.146 50.996 113.547 48.7412 107.5 46.5Z" fill="#0052cd" stroke="#0052cd" stroke-linecap="round"/>
+				</svg>
+
+				<h1><a style="color:#000;" href="{% url 'main_page:home'  %}">CryptoTech</a></h1>
+			</div>
+
+			<div class="search__second__header__block">
+
+				<a href="{% url 'catalog:home' %}" class="catalog">
+					<svg width="" height="" viewBox="0 0 189 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M9.5 8C76.6702 8 114.33 8 181.5 8" stroke="" stroke-width="15" stroke-linecap="round"/>
+					<path d="M9 135C76.1702 135 113.83 135 181 135" stroke="" stroke-width="15" stroke-linecap="round"/>
+					<path d="M8 70C75.1702 70 112.83 70 180 70" stroke="" stroke-width="15" stroke-linecap="round"/>
+					</svg>
+					{% trans 'Каталог' %}
+				</a>
+
+
+				<div class="search__block__form ">
+
+					{% block search_form_a %}
+					<form class="" action="{% url 'catalog:home' %}" method="get">
+						<input name="q" type="search" placeholder="{% trans 'Поиск на сайте' %}">
+
+
+						<button type="submit">
+							<svg width="" height="" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect x="1.41421" y="15.1819" width="19.4705" height="19.4705" rx="8" transform="rotate(-45 1.41421 15.1819)" stroke="" stroke-width="2"/>
+							<path d="M26.5 26.5C25 25 25 25 25 25L24 24" stroke="" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+							{% trans 'Найти' %}
+						</button>
+					</form>
+					{% endblock %}
+
+
+					<a href="{% url 'catalog:favourite_page' %}" class="fauvorit__block">
+						<span class="col">{% block favourite_count %}{% endblock %}</span>
+						<svg width="" height="" viewBox="0 0 230 202" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M158.5 16.0003C138.062 16.8034 129.126 21.8323 115.5 35.0003C99.2919 18.0363 84 13 66.5 16.0003C49.0001 19.0006 23.5 40.5001 19.0001 54.0003C14.5001 67.5004 13.6964 81.526 19.0001 95.5003C24.3037 109.475 105.946 189.344 115.5 186.5C125.054 183.656 202.5 117.486 211 95.5003C215.524 88.9223 216.696 64.9745 211 54.0003C205.304 43.026 189.18 16.0232 158.5 16.0003Z" stroke="" stroke-width="15"/>
+						</svg>
+					</a>
+
+
+					<span class="hero__menu__btn">
+						<svg width="" height="" viewBox="0 0 189 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9.5 8C76.6702 8 114.33 8 181.5 8" stroke="" stroke-width="15" stroke-linecap="round"/>
+						<path d="M9 135C76.1702 135 113.83 135 181 135" stroke="" stroke-width="15" stroke-linecap="round"/>
+						<path d="M8 70C75.1702 70 112.83 70 180 70" stroke="" stroke-width="15" stroke-linecap="round"/>
+						</svg>
+
+					</span>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="third__header__block">
+
+			{% include 'includes/header_links.html' %}
+
+
+			<form action="{% url 'catalog:home' %}" method="get">
+
+				<input name="q" type="search" placeholder="{% trans 'Поиск на сайте' %}">
+
+
+				<button type="submit">
+					<svg width="" height="" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect x="1.41421" y="15.1819" width="19.4705" height="19.4705" rx="8" transform="rotate(-45 1.41421 15.1819)" stroke="" stroke-width="2"/>
+					<path d="M26.5 26.5C25 25 25 25 25 25L24 24" stroke="" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+					{% trans 'Найти' %}
+				</button>
+
+			</form>
+		</div>
+
+
+	</section>
+
+
+	{% block content %}
+    {% endblock %}
+
+
+	<footer class="footer__section">
+
+		<div class="footer__main__links">
+
+			<div class="footer__logo">
+				<svg width="" height="" viewBox="0 0 188 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M50.5 21.5V2.5H135.5V21.5H104.5V109H81.5L81 21.5H50.5Z" fill="#fff"/>
+				<path d="M184 4H145.5V13H170.5L131.5 91.5L139 98L184 4Z" fill="#fff"/>
+				<path d="M40.5 12.5V3.5H3.5L33.5 65L37 51L18 12.5H40.5Z" fill="#fff"/>
+				<path d="M76.5 132.5L62.5 126.5L94 192L124.5 129L112 132.5L94 168L76.5 132.5Z" fill="#fff"/>
+				<path d="M50.5 21.5V2.5H135.5V21.5H104.5V109H81.5L81 21.5H50.5Z" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+				<path d="M184 4H145.5V13H170.5L131.5 91.5L139 98L184 4Z" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+				<path d="M40.5 12.5V3.5H3.5L33.5 65L37 51L18 12.5H40.5Z" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+				<path d="M76.5 132.5L62.5 126.5L94 192L124.5 129L112 132.5L94 168L76.5 132.5Z" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+				<path d="M43 60C49.8 38.4 69.5 30 78.5 28.5V49.5C75.3 50.7 71.5 55 70 57C67.3333 59.5 62.4 67.9 64 81.5C65.6 95.1 76 102.5 81 104.5C82 105.167 86.8 106.7 98 107.5C109.2 108.3 117.667 100.5 120.5 96.5C122.833 98.8333 129 104.9 135 110.5C131.5 115 116 127 91.5 127.5C71.9 127.9 58.6667 117.333 54.5 112C47.8333 103.667 36.2 81.6 43 60Z" fill="#0052cd" stroke="#0052cd"/>
+				<path d="M107.5 46.5V27.5C120.207 29.0752 126.104 32.7514 135 43L120 56C116.146 50.996 113.547 48.7412 107.5 46.5Z" fill="#0052cd" stroke="#0052cd" stroke-linecap="round"/>
+				</svg>
+
+				<h1>CryptoTech</h1>
+			</div>
+
+
+			<div class="footer__links ">
+				{% include 'includes/header_links.html' %}
+			</div>
+
+		</div>
+
+		<div class="second__footer__block">
+			<a class="a__bottom__hover" href="mailto:crypto.tech@mail.ru">
+				<svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M6.5 7.49995C9.5 11 12 12.5 12.5 12.5C13 12.5 16.461 10.1213 18.5 7.49995M6.5 1.00001C2.5 0.999993 1 2.19995 1 6.99995C1 11.8 1 15.6666 1 17C1 18.3333 1.8 21 5 21C8.2 21 15.6667 21 19 21C20.6667 21 24 20.2 24 17C24 13.8 24 8.99997 24 6.99995C24 1.99995 23 1 19 1L6.5 1.00001Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+				</svg>
+				crypto.tech@mail.ru
+			</a>
+			<a class="a__bottom__hover" href="#">
+				<svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M6.00002 1C10 5.8 11 7.66667 11 8C10.1667 8.33333 8.60002 9.2 9.00002 10C9.40002 10.8 13.8333 15 16 17C16.6667 16 18.2 14.1 19 14.5C20 15 26 18 25.5 19.5C25 21 23 24.5 20.5 24.5C18 24.5 16 24 14.5 23C13.3 22.2 6.00002 14.3333 2.50002 10.5C1.50002 7.83333 0.600015 2.2 5.00002 1" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+				</svg>
+				+7 (963) 544-44-23
+			</a>
+			<a class="a__bottom__hover" href="https://t.me/+Y_aw8GoDVBAwYWJi">
+				<svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M10 15.4999C11 16.4999 15.5 20.4999 17.5 22.4999C19.5 24.4999 21.1667 23.8333 21.5 22.4999C22.3333 18.4999 24 8.24994 25 3.99995C26 -0.250036 23.5 0.999927 21.5 1.99995C19.5 2.99998 7.5 7.89994 3.50001 9.49994C-0.499992 10.6999 1.50001 12.3333 3.00001 12.9999L10 15.4999ZM10 15.4999C13.71 11.9852 21.5 4.49993 19.5 6.49993" stroke-width="2" stroke="#ffffff"/>
+				</svg>
+
+				@CryptoTech
+			</a>
+			<a class="a__bottom__hover" href="https://t.me/CryptoTech_ua_Bot">
+
+				
+				<svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M10 15.4999C11 16.4999 15.5 20.4999 17.5 22.4999C19.5 24.4999 21.1667 23.8333 21.5 22.4999C22.3333 18.4999 24 8.24994 25 3.99995C26 -0.250036 23.5 0.999927 21.5 1.99995C19.5 2.99998 7.5 7.89994 3.50001 9.49994C-0.499992 10.6999 1.50001 12.3333 3.00001 12.9999L10 15.4999ZM10 15.4999C13.71 11.9852 21.5 4.49993 19.5 6.49993" stroke-width="2" stroke="#ffffff"/>
+				</svg>
+
+
+				@CryptoTechBot
+			</a>
+		</div>
+
+
+		<div class="thrid__footer__block">
+			<a class="a__bottom__hover" href="{% url 'main_page:contract3' %}">{% trans 'Договор оферты' %}</a>
+			<a class="a__bottom__hover" href="{% url 'main_page:contract2' %}">{% trans 'Политика конфиденциальности' %}</a>
+			<a class="a__bottom__hover" href="{% url 'main_page:contract1' %}">{% trans 'Положение о персональных данных' %}</a>
+		</div>
+
+	</footer>
+
+	<script src="{% static 'cat/libs_js/ScrollSmoother.min.js' %}" defer></script>
+	<script src="{% static 'cat/libs_js/ScrollTrigger.min.js' %}" defer></script>
+	<script src="{% static 'cat/libs_js/gsap.min.js' %}" defer></script>
+	<script src="{% static 'cat/libs_js/jquery-3.7.1.min.js' %}" defer></script>
+	<script src="{% static 'cat/libs_js/swiper-bundle.min.js' %}" defer></script>
+	<script src="{% static 'cat/js/app.js' %}" defer></script>
+	<script src="{% static 'cat/js/dop_app.js' %}" defer></script>
+	<script src="{% static 'cat/js/swipe.js' %}" defer></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		  document.querySelectorAll('.message_absolute__close').forEach(closeButton => {
+		    closeButton.addEventListener('click', () => {
+		      const messageBlock = closeButton.closest('.message_absolute');
+		      messageBlock.style.display = 'none';
+		    });
+		  });
+		});
+	</script>
+
+	{% block dop_script %}
+	{% endblock %}
+
+</body>
+</html>

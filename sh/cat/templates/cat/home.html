@@ -1,0 +1,348 @@
+{% extends 'cat/base.html' %}
+{% load humanize %}
+{% load i18n %}
+
+
+{% block title %}Каталог{% endblock %}
+
+{% block favourite_count %}
+{{ favourites_count }}
+{% endblock %}
+
+
+
+{% block media_filter %}
+<div class="filter__menu">
+
+		<div class="filter__menu__close__btn">
+			<span></span>
+
+		</div>
+
+
+		<form action="" method="get">
+
+						<div class="block__filter__price">
+
+							<h4 class="h4_pointer">{% trans 'Цена' %}</h4>
+
+						  <div class="card cardactive">
+
+						    <div class="price-content">
+						      <div>
+						        <label>от</label>
+						        <p id="min-value">{{ min }}</p>
+						      </div>
+						      <div>
+						        <label>до</label>
+						        <p id="max-value">{{ max }}</p>
+						      </div>
+						    </div>
+						    <div class="range-slider">
+
+						      <input type="range" name="min_price" class="min-price" value="{{ min }}" min="{{ min }}" max="{{ max }}" step="1"/>
+						      <input type="range" name="max_price" class="max-price" value="{{ max }}" min="{{ min }}" max="{{ max }}" step="1"/>
+						    </div>
+						  </div>
+						</div>
+
+
+						<div class="block__filter__brand">
+
+							<h4 class="h4_pointer">{% trans 'Бренд' %}</h4>
+
+							<div class="card">
+
+								{% for b in brand %}
+									<div class="block__filter__brand__input__con our_style_list cr">
+										<input name="brand" type="checkbox" value="{{ b.id }}">
+
+										<span class="check_box cr">
+											<svg width="" height="" viewBox="0 0 170 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.5 56C29.0025 76.6977 60.7112 107.152 61 109C61.2888 110.848 159.482 7.89698 162 8.49995" stroke="white" stroke-width="28" stroke-linecap="round"/>
+											</svg>
+										</span>
+
+										<label class=" cr" for="">{{ b.title }}</label>
+									</div>
+								{% endfor %}
+							</div>
+
+						</div>
+
+						<div class="block__filter__coin">
+
+							<h4 class="h4_pointer">{% trans 'Монета' %}</h4>
+
+							<div class="card">
+
+								{% for c in coin %}
+									<div class="block__filter__coin__input__con our_style_list cr">
+
+										<input name="coin" type="checkbox" value="{{ c.id }}">
+
+										<span class="check_box cr">
+											<svg width="" height="" viewBox="0 0 170 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.5 56C29.0025 76.6977 60.7112 107.152 61 109C61.2888 110.848 159.482 7.89698 162 8.49995" stroke="white" stroke-width="28" stroke-linecap="round"/>
+											</svg>
+										</span>
+
+										<label class=" cr" for="">{{ c.title }}</label>
+									</div>
+								{% endfor %}
+
+							</div>
+
+						</div>
+
+
+
+						<div class="block__filter__price block__filter__power">
+
+							<h4 class="h4_pointer">{% trans 'Потребление' %}</h4>
+
+						  <div class="card">
+
+						    <div class="price-content">
+						      <div>
+						        <label>от</label>
+						        <p id="min-power">{{ p_min }}</p>
+						      </div>
+						      <div>
+						        <label>до</label>
+						        <p id="max-power">{{ p_max }}</p>
+						      </div>
+						    </div>
+						    <div class="range-slider">
+						      <input name="min_power" type="range" class="min-power" value="{{ p_min }}" min="{{ p_min }}" max="{{ p_max }}" step="1"/>
+						      <input name="max_power" type="range" class="max-power" value="{{ p_max }}" min="{{ p_min }}" max="{{ p_max }}" step="1"/>
+						    </div>
+						  </div>
+						</div>
+
+
+						<button type="submit" class="btn__filter__apply">{% trans 'Применить' %}</button>
+
+					</form>
+
+
+	</div>
+{% endblock %}
+
+
+{% block content %}
+
+<section class="main__catalog__content__section">
+
+			<div class="cat__title">
+				<h1>ASIC {% trans 'майнеры' %}</h1>
+				<span>{{ count }} {% trans 'товара' %}</span>
+			</div>
+
+
+		<div class="asic__firms">
+
+			{% for b in brand %}
+				<a href="{{ b.get_absolute_url }}">
+
+					<img src="{{ b.image.url }}" alt="">
+
+				</a>
+			{% endfor %}
+
+		</div>
+
+	<!-- {% for ff in fs_fl %}
+				<a href="{{ ff.get_absolute_url }}">{{ ff.title }}</a>
+			{% endfor %}-->
+
+		<div class="fast__settings">
+			<a href="?ff_coin=BTC">{% trans 'ASIC для майнинга Bitcoin' %}</a>
+			<!--<a href="?ff_coin=LTC">{% trans 'ASIC для майнинга LTC / DOGE' %}</a>-->
+			<a href="{% url 'catalog:power_asic' %}">{% trans 'Мощные асики' %}</a>
+			<a href="{% url 'catalog:home' %}">{% trans 'Сбросить фильтры' %}</a>
+		</div>
+
+
+		<div class="asic__filter__card">
+
+				<div class="asic__filter">
+
+					<div class="filterbtn">
+						<span class="filterbtnjs">{% trans 'Фильтры' %}</span>
+					</div>
+
+
+					<form action="" method="get">
+
+						<div class="block__filter__price">
+
+							<h4 class="h4_pointer">{% trans 'Цена' %}</h4>
+
+						  <div class="card cardactive">
+
+						    <div class="price-content">
+						      <div>
+						        <label>от</label>
+						        <p style="font-size: calc(var(--index) * .5)" id="min-value">{{ min }}</p>
+						      </div>
+						      <div>
+						        <label>до</label>
+						        <p style="font-size: calc(var(--index) * .5)" id="max-value">{{ max }}</p>
+						      </div>
+						    </div>
+						    <div class="range-slider">
+
+						      <input type="range" name="min_price" class="min-price" value="{{ min }}" min="{{ min }}" max="{{ max }}" step="1"/>
+						      <input type="range" name="max_price" class="max-price" value="{{ max }}" min="{{ min }}" max="{{ max }}" step="1"/>
+						    </div>
+						  </div>
+						</div>
+
+
+						<div class="block__filter__brand">
+
+							<h4 class="h4_pointer">{% trans 'Бренд' %}</h4>
+
+							<div class="card">
+
+								{% for b in brand %}
+									<div class="block__filter__brand__input__con our_style_list cr">
+										<input name="brand" type="checkbox" value="{{ b.id }}">
+
+										<span class="check_box cr">
+											<svg width="" height="" viewBox="0 0 170 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.5 56C29.0025 76.6977 60.7112 107.152 61 109C61.2888 110.848 159.482 7.89698 162 8.49995" stroke="white" stroke-width="28" stroke-linecap="round"/>
+											</svg>
+										</span>
+
+										<label class=" cr" for="">{{ b.title }}</label>
+									</div>
+								{% endfor %}
+							</div>
+
+						</div>
+
+						<div class="block__filter__coin">
+
+							<h4 class="h4_pointer">{% trans 'Монета' %}</h4>
+
+							<div class="card">
+
+								{% for c in coin %}
+									<div class="block__filter__coin__input__con our_style_list cr">
+
+										<input name="coin" type="checkbox" value="{{ c.id }}">
+
+										<span class="check_box cr">
+											<svg width="" height="" viewBox="0 0 170 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.5 56C29.0025 76.6977 60.7112 107.152 61 109C61.2888 110.848 159.482 7.89698 162 8.49995" stroke="white" stroke-width="28" stroke-linecap="round"/>
+											</svg>
+										</span>
+
+										<label class=" cr" for="">{{ c.title }}</label>
+									</div>
+								{% endfor %}
+
+							</div>
+
+						</div>
+
+
+
+						<div class="block__filter__price block__filter__power">
+
+							<h4 class="h4_pointer">{% trans 'Потребление' %}</h4>
+
+						  <div class="card">
+
+						    <div class="price-content">
+						      <div>
+						        <label>от</label>
+						        <p style="font-size: calc(var(--index) * .5)" id="min-power">{{ p_min }}</p>
+						      </div>
+						      <div>
+						        <label>до</label>
+						        <p style="font-size: calc(var(--index) * .5)" id="max-power">{{ p_max }}</p>
+						      </div>
+						    </div>
+						    <div class="range-slider">
+						      <input name="min_power" type="range" class="min-power" value="{{ p_min }}" min="{{ p_min }}" max="{{ p_max }}" step="1"/>
+						      <input name="max_power" type="range" class="max-power" value="{{ p_max }}" min="{{ p_min }}" max="{{ p_max }}" step="1"/>
+						    </div>
+						  </div>
+						</div>
+
+
+						<button type="submit" class="btn__filter__apply">{% trans 'Применить' %}</button>
+
+					</form>
+
+				</div>
+
+
+
+
+				{% if nothing %}
+					<p class="nothing">{% trans 'По вашему запросу ничего не найдено.' %}</p>
+				{% else %}
+					<div class="asic__cards">
+
+					{% for as in page_obj %}
+
+						<div class="kard">
+
+						<div class="bg__container">
+
+							<img src="{{ as.main_img.url }}" alt="">
+
+							<a href="{{ as.get_absolute_url }}" class="kard__title">{{ as.title }}</a>
+
+							<div class="kard__property">
+
+								<p class="card__hesh">
+									<span>{% trans 'Хешрейт' %}</span>
+									<span>{{ as.property.hesh}}</span>
+								</p>
+
+								<p class="card__electro">
+									<span>{% trans 'Энергопотребление' %}</span>
+									<span>{{ as.power}} {% trans 'Вт' %}</span>
+								</p>
+
+							</div>
+
+						</div>
+
+
+						<div class="kard__order__con">
+							<span>{{ as.usdt|intcomma }} USDT</span>
+							<a href="{{ as.get_absolute_url }}">{% trans 'Заказать' %}</a>
+						</div>
+
+					</div>
+
+					{% endfor %}
+
+
+				</div>
+				{% endif %}
+
+			</div>
+
+	</section>
+
+	<div class="pagination">
+
+		<span class="space"></span>
+
+		<ul>
+		  {% for p in page_obj.paginator.page_range %}
+			<li class="{% if p == page_obj.number %}active_p{% endif %}">
+			  <a href="?page={{ p }}&{{ query_string }}">{{ p }}</a>
+			</li>
+		  {% endfor %}
+		</ul>
+
+	</div>
+{% endblock %}

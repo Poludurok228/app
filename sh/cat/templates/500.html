@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    {% include 'includes/styles_links.html' %}
+    <style>
+        body {
+            background: #0052cd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        h1 {
+            color: #ddd;
+            font-size: max(calc(var(--index) * 9), 220px);
+            font-family: f6;
+        }
+
+        p {
+            color: #ddd;
+            font-size: max(calc(var(--index) * .5), 30px);
+        }
+    </style>
+    <link rel="icon" href="{% static 'cat/img/icon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <h1>500</h1>
+    <p>Server error</p>
+</body>
+</html>

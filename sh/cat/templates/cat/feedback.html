@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Письмо на обратную связь</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			box-sizing: border-box;
+		}
+
+		svg {
+			width: max(60px, 20px);
+		}
+
+		header, .logo {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		header {
+			justify-content: space-between;
+			padding: 1% 20%;
+		}
+
+		h1 {
+			font-size: max(20px, 13px);
+		}
+
+		main {
+			padding: 1% 20%;
+		}
+
+		main p {
+			margin-bottom: 10px;
+			font-size: max(20px, 13px);
+		}
+	</style>
+
+</head>
+<body>
+
+	<header>
+
+		<h1>{% block action %}Оставить Заявку{% endblock %}</h1>
+
+	</header>
+
+	<main>
+		{% block content %}
+			<p>Страница с Асиком: {{ asic.title }}</p>
+			<p>Имя: {{ name }}</p>
+			<p>Телефон: {{ phone }}</p>
+			<p>Цена асика: {{ asic.get_percent_price }}</p> <br>
+		{% endblock %}
+	</main>
+
+</body>
+</html>

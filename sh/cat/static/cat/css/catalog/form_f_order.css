@@ -1,0 +1,188 @@
+.order__form__con {
+  display: block;
+  position: fixed;
+  background: #fff;
+  height: 95vh;
+  top: 2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--index) * 29.7);
+  padding: calc(var(--index) * 2) calc(var(--index) * 1.5);
+  border-radius: calc(var(--index) * .5);
+  display: none;
+}
+
+.blure__f__form {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, .2);
+	display: none;
+}
+
+
+.price__hidden {
+	display: none;
+}
+
+.form__textovichok {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--index) * .1);
+	background: var(--cursor_color);
+	padding: calc(var(--index) * .1);
+	border-radius: calc(var(--index) * .5);
+	color: #fff;
+	margin-bottom: calc(var(--index) * .1);
+}
+
+.form__textovichok p {
+	color: rgba(255, 255, 255, .8);
+	font-size: max(calc(var(--index) * .55), 15px);
+}
+
+.order__form__con__close__btn {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 20px;
+	height: 20px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.order__form__con__close__btn span {
+	width: 100%;
+	height: 2px;
+	background: var(--main_color);
+	display: block;
+	position: relative;
+	transform: rotate(45deg);
+	border-radius: 30px;
+}
+
+.order__form__con__close__btn span::after {
+	content: '';
+	transform: rotate(-90deg);
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background: var(--main_color);
+	display: block;
+	border-radius: 30px;
+}
+
+.order__form__con form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.order__form__con form h1 {
+	font-size: max(calc(var(--index) * 1.8), 30px);
+	font-family: f6;
+}
+
+.order__form__con__input {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--index) * .1);
+}
+
+.order__form__con__input input {
+	all: unset;
+	border: 2px solid rgba(0, 0, 0, .3);
+	padding: max(calc(var(--index) * .2), 15px);
+	border-radius: 100px;
+	display: block;
+	font-size: max(calc(var(--index) * .5), 15px);
+}
+
+.order__form__con__input input:hover {
+	border: 2px solid rgba(0, 0, 0, .5);
+	transition: .2s;
+}
+
+.order__form__con__input input:focus {
+	border: 2px solid var(--cursor_color);
+}
+
+.order__form__con__input input:not(:placeholder-shown) {
+  border: 2px solid var(--cursor_color);
+}
+
+
+.order__form__con__input label {
+	font-size: max(calc(var(--index) * .4), 13px);
+	color: rgba(0, 0, 0, .8);
+}
+
+.polit_conf {
+	font-size: max(calc(var(--index) * .3), 12px);
+	padding-top: calc(var(--index) * .5);
+	text-align: center;
+}
+
+.order__form__con form button {
+	all: unset;
+	display: block;
+	padding: max(calc(var(--index) * .3), 15px);
+	border-radius: 100px;
+	color: #fff;
+	background: var(--cursor_color);
+	text-align: center;
+	cursor: pointer;
+	font-size: max(calc(var(--index) * .5), 15px);
+
+}
+
+.polit_conf a {
+	color: var(--cursor_color);
+}
+
+.quantity__as {
+	display: flex;
+	gap: calc(var(--index) * .1);
+	padding: calc(var(--index) * .5) 0;
+}
+
+.quantity__as span { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background: var(--cursor_color);
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	cursor: pointer;
+	user-select: none;
+	font-size: max(calc(var(--index) * .5), 15px);
+}
+
+.quantity__as span:focus { 
+	background: #073B8A;
+}
+
+
+.quantity__as input {
+	width: 70px;
+	text-align: center;
+}
+
+.totality_price {
+	color: rgba(0, 0, 0, .8);
+}
+
+
+@media screen and (max-width: 500px) {
+  .order__form__con {
+    width: 90%;
+    padding-top: 40px;
+  }
+}

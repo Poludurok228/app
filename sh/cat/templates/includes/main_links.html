@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" href="{% url 'main_page:about' %}">{% trans 'О компании' %}</a>
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" class="" href="{% url 'catalog:home' %}">{% trans 'Каталог' %}</a>
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" href="{% url 'catalog:stabilizer' %}">{% trans 'Стабилизаторы' %}</a>
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" href="{% url 'main_page:check_order' %}">{% trans 'О заказе' %}</a>
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" href="{% url 'main_page:check_warranty' %}">{% trans 'Проверить гарантию' %}</a>
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" href="{% url 'main_page:placement' %}">{% trans 'Размещение' %}</a>
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" href="{% url 'main_page:blog' %}">{% trans 'Блог' %}</a>
+<a style="font-size: max(calc(var(--index) * .5), 13px) !important;" href="{% url 'main_page:contact' %}">{% trans 'Контакты' %}</a>

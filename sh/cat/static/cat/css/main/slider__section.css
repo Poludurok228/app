@@ -1,0 +1,122 @@
+.slider__section {
+	width: 95%;
+	margin: calc(var(--index) * 5) auto;
+}
+
+.section__title {
+	font-size: max(calc(var(--index) * 4), 35px);
+}
+
+.asic__swiper {
+	padding: calc(var(--index) * 3) 0;
+}
+
+.asic__swiper2 {
+	padding: calc(var(--index) * 3) 0;
+	display: none;
+}
+
+.swiper-slide__asic {
+	min-height: calc(var(--index) * 50);
+	border-radius: calc(var(--index) * .01);
+	position: relative;
+}
+
+.positon__number__slide {
+	position: absolute;
+	top: calc(calc(var(--index) * 1.7) * var(--invers));
+	font-size: max(calc(var(--index) * .6), 5px);
+	left: 0;
+	font-family: f5;
+}
+
+.swiper-slide__asic a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: inherit;
+	flex-direction: column;
+	cursor: grab;
+}
+
+.swiper-slide__asic a img {
+	width: calc(var(--index) * 33);
+}
+
+.name__slider__card {
+	display: flex;
+	align-items: center;
+	gap: calc(var(--index) * .3);
+}
+
+.name__slider__card p {
+	font-size: calc(var(--index) * 2.4);
+}
+
+.name__slider__card span {
+	font-size: calc(var(--index) * .8);
+	text-transform: uppercase;
+	padding: calc(var(--index) * .1) calc(var(--index) * 1);
+	border-radius: 0 5px 5px 0;
+}
+
+.btn__more {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+
+.btn__more a span svg {
+	width: calc(var(--index) * 1.2);
+	height: calc(var(--index) * .5);
+}
+
+.btn__more a span {
+	display: block;
+	padding-top: 4px;
+}
+
+.btn__more a {
+	display: flex;
+	align-items: center;
+	gap: calc(var(--index) * 1);
+	font-size: max(calc(var(--index) * .55), 15px);
+}
+
+
+/* MEDIA */ 
+
+
+@media (max-width: 900px) {
+	.cursore__dot {
+		display: none;
+	}
+}
+
+
+@media (max-width: 700px) {
+	.asic__swiper {
+		display: none;
+	}
+
+	.section__title {
+		margin: max(calc(var(--index) * 7), 70px) 0 max(calc(var(--index) * 3), 20px) 0;
+	}
+
+	.asic__swiper2 {
+		display: block;
+	}
+
+	.swiper-slide__asic {
+		min-height: 70vh;
+	}
+
+	.swiper-slide__asic a img {
+		width: max(calc(var(--index) * 63), 180px);
+	}
+
+	.slider__section {
+		margin-bottom: max(calc(var(--index) * 10), 60px);
+	}
+}

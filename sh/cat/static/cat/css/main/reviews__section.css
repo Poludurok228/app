@@ -1,0 +1,128 @@
+.reviews__section {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.section__title {
+	position: relative;
+}
+
+.section__title h1 {
+	font-size: max(calc(var(--index) * 5), 35px);
+	padding: calc(var(--index) * 3) calc(var(--index) * 3) calc(var(--index) * 3) 0;
+}
+
+.review__btn__con {
+	position: absolute;
+	bottom: 0;
+	right: 5%;
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	gap: calc(var(--index) * 1);
+	height: calc(var(--index) * 4);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	position: unset !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+	all: unset !important;
+}
+
+.btns__reviews {
+	width: max(calc(var(--index) * 4), 38px);
+	height: max(calc(var(--index) * 4), 38px);
+	background-color: var(--main_color);
+	border-radius: calc(var(--index) * .2);
+	position: unset !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btns__reviews svg {
+	width: max(calc(var(--index) * 1.3), 17px);
+	height: max(calc(var(--index) * 1.3), 17px);
+}
+
+.rt180 svg {
+	transform: rotate(-180deg);
+}
+
+.swiper-slide__review {
+	border: 1px solid rgba(0, 0, 0, .1);
+	min-height: calc(var(--index) * 20);
+	border-radius: calc(var(--index) * .5);
+	background-color: #fff;
+	padding: calc(var(--index) * 2) calc(var(--index) * 3);
+	cursor: grab;
+}
+
+.message__review {
+	line-height: 1.7;
+	color: #3b3b3b;
+}
+
+.swiper__review {
+	width: 90%;
+	margin: calc(var(--index) * 1) auto;
+}
+
+.review__footer {
+	display: flex;
+	gap: calc(var(--index) * 1);
+	margin-top: calc(var(--index) * 2);
+	align-items: center;
+}
+
+.link__reviewer {
+	width: fit-content;
+	padding: calc(var(--index) * .1) 0;
+}
+
+.review__section__footer {
+	display: flex;
+	align-items: center;
+	margin-top: calc(var(--index) * 2);
+	gap: calc(var(--index) * 1);
+	width: fit-content;
+}
+
+.review__section__footer p {
+	border-left: 2px solid rgba(0, 0, 0, .2);
+	padding-left: calc(var(--index) * 1);
+	height: 100%;
+	width: 40%;
+	font-size: max(calc(var(--index) * .5), 12px);
+	line-height: 1.7;
+	color: rgba(0, 0, 0, .7);
+}
+
+.review__section__footer__link {
+	font-size: max(calc(var(--index) * .5), 15px);
+}
+
+
+
+/* MEDIA */
+
+
+.swiper__review2 {
+	display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+	.swiper__review2 {
+		display: block;
+		margin-top: calc(var(--index) * 2);
+	}
+
+	.swiper__review {
+		display: none;
+	}
+}

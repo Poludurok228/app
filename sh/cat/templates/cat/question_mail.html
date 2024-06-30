@@ -1,0 +1,11 @@
+{% extends 'cat/feedback.html' %}
+
+{% block action %}Сообщение с вкладки "Вопросы и Ответы"{% endblock %}
+
+{% block content %}
+<p>Страница с Асиком: {{ asic.title }}</p>
+<p>Имя: {{ name }}</p>
+<p>Почта: {{ mail }}</p>
+<p>Контактная информация: {{ contact }}</p>
+<p>Сообщение: {{ message }}</p>
+{% endblock %}

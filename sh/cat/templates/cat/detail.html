@@ -1,0 +1,582 @@
+{% extends 'cat/base.html' %}
+{% load humanize %}
+{% load i18n %}
+
+{% block title %}{{ asic.title_min }}{% endblock %}
+
+{% block favourite_count %}
+{{ favourites_count }}
+{% endblock %}
+
+
+{% block dop_content %}
+<div style="z-index: 9999999999999999999999999; backdrop-filter: blur(2px);" class="blure__f__form"></div>
+
+<div style="z-index: 999999999999999999999999999;" class="order__form__con">
+
+		<div class="order__form__con__close__btn">
+			<span></span>
+		</div>
+
+		<form method="post">
+
+			{% csrf_token %}
+
+			<input type="hidden" name="order_form" value="1">
+
+			<span class="price__hidden">{{ asic.usdt }}</span>
+
+			<div class="form__textovichok">
+				<h1>{% trans 'Заказать продукт' %}</h1>
+				<p>{{ asic.title }}</p>
+			</div>
+
+			<div class="order__form__con__input">
+				<label for="">{% trans 'Ваше имя' %}</label>
+				{{ form3.name }}
+			</div>
+
+			<div class="order__form__con__input">
+		       <label for="phone">{% trans 'Телефон' %}</label>
+		       {{ form3.phone }}
+		   </div>
+
+			<div class="order__form__con__input">
+				<label for="">{% trans 'Почта' %}</label>
+				{{ form3.email }}
+			</div>
+
+			<div class="order__form__con__input">
+				<label for="">Telegram</label>
+				{{ form3.telegram }}
+			</div>
+
+			<div class="order__form__con__input">
+				<label for="">{% trans 'Цена' %}</label>
+				<input readonly name="totality_price" class="totality_price" value="0" type="text">
+			</div>
+
+			<div class="quantity__as">
+				<span class="decrement">-</span>
+				<input readonly name="totality_quantity" id="quantity" type="text" value="1">
+				<span class="increment">+</span>
+			</div>
+
+			<button type="submit">{% trans 'Отправить' %}</button>
+
+			<p class="polit_conf">{% trans 'Продолжая, вы соглашаетесь с ' %} <a href="{% url 'main_page:contract2' %}">{% trans 'политикой конфиденциальности.' %}</a></p>
+
+		</form>
+
+	</div>
+{% endblock %}
+
+
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+		<div class="message_absolute {{ message.tags }}">{{ message }} <span class="message_absolute__close"><p></p></span></div>
+    {% endfor %}
+{% endif %}
+
+
+<section class="main__detail__content__section">
+
+		<div class="main__detail__content__section__left">
+
+			<div style="height: unset !important;" class = "card">
+		        <!-- card left -->
+		        <div class = "product-imgs">
+
+		        	<div class = "img-select">
+		            <div class = "img-item img-item-active">
+		              <a href = "#">
+		                <img class="img micro__img" src="{{ asic.main_img.url }}">
+		              </a>
+		            </div>
+						{% for photo in asic.detail_img.all %}
+							<div class = "img-item">
+							  <a href = "#">
+								<img class="img micro__img" src = "{{ photo.img.url }}" alt = "shoe image">
+							  </a>
+							</div>
+						{% endfor %}
+		          </div>
+
+
+		          <div class = "img-display">
+		            <div class = "img-showcase">
+		              <img class="img macro__img" src = "{{ asic.main_img.url }}" alt = "shoe image">
+
+							{% for photo in asic.detail_img.all %}
+								<img class="img macro__img" src = "{{ photo.img.url }}" alt = "shoe image">
+							{% endfor %}
+
+		            </div>
+		          </div>
+
+		        </div>
+
+		      </div>
+
+		</div>
+
+
+		<div class="main__detail__content__section__right">
+
+			<p class="articul">{% trans 'Артикул' %}: {{ asic.article }}</p>
+
+			<h1 class="name__asic__mainer">{{ asic.title }}</h1>
+
+			<div class="price__skidka price__skidka__n">
+
+				<div class="cena">
+
+					<p class="real__price">{{ asic.usdt|intcomma }} USDT</p>
+					{% if asic.old_price %}
+						<p class="old__price">{{ asic.old_price|intcomma }} ₴</p>
+					{% endif %}
+
+				</div>
+
+				<div class="btn__order">
+					<a class="fast__order__btn__form" href="#">{% trans 'Быстрый заказ' %}</a>
+				</div>
+
+			</div>
+
+			<div class="mini__property mini__property__n">
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Алгоритм' %}</span><span>{{ asic.mini_property.algo }}</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Доходность в день' %}</span><span>{{ asic.profit_for_day }} usdt</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Энергопотребление' %}</span><span>{{ asic.mini_property.electro }}</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Доходность в месяц' %}</span><span>{{ asic.profit_for_month }} usdt</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Криптовалюта' %}</span><span>{{ asic.mini_property.coin }}</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Окупаемость' %}</span><span>{{ asic.payback }} {% trans 'мес' %}.</span></p>
+				</div>
+
+			</div>
+
+			<a class="add__favourite__btn" href="{% url 'catalog:add_asic' slug=asic.slug %}">{% trans 'Добавить в избранное' %}</a>
+
+		</div>
+
+	</section>
+
+
+<div class="media__prprt__con">
+
+		<div class="price__skidka">
+
+				<div class="cena">
+
+					<p class="real__price">{{ asic.usdt|intcomma }} usdt</p>
+
+					{% if asic.old_price %}
+						<p class="old__price">{{ asic.old_price|intcomma }} ₴</p>
+					{% endif %}
+
+				</div>
+
+				<div class="btn__order">
+					<a class="fast__order__btn__form_media" href="#">{% trans 'Быстрый заказ' %}</a>
+				</div>
+
+			</div>
+
+			<div class="mini__property">
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Алгоритм' %}</span><span>{{ asic.mini_property.algo }}</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Криптовалюта' %}</span><span>{{ asic.mini_property.coin }}</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Энергопотребление' %}</span><span>{{ asic.mini_property.electro }}</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Доходность в день' %}</span><span>{{ asic.profit_for_day }} usdt</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Доходность в месяц' %}</span><span>{{ asic.profit_for_month }} usdt</span></p>
+				</div>
+
+				<div class="mini__property__item">
+					<p><span class="name__property">{% trans 'Окупаемость' %}</span><span>{{ asic.payback }} {% trans 'мес' %}.</span></p>
+				</div>
+
+			</div>
+
+
+
+	</div>
+
+
+
+
+
+<section class="detail__tabs__section">
+
+
+
+		<div class="tabs">
+			    <div class="tab-header">
+			        <div class="tab-item active" data-tab="1">{% trans 'Обзор' %}</div>
+			        <div class="tab-item" data-tab="2">{% trans 'Характеристики' %}</div>
+			        <div class="tab-item" data-tab="3">{% trans 'Вопросы и ответы' %}</div>
+			    </div>
+			    <div class="tab-content">
+			        <div class="tab-pane active" data-tab="1">
+
+			        	<div class="property__content">
+
+			        		<div class="property__content__item">
+
+			        			<h1 class="property__content__title">{% trans 'О товаре' %}</h1>
+
+			        			<p class="property__content__description">{{ asic.description.our }}</p>
+
+			        		</div>
+
+			        		<div class="property__content__item">
+
+			        			<h1 class="property__content__title">{% trans 'Какую криптовалюту можно добывать' %}</h1>
+
+			        			<p class="property__content__description">{{ asic.description.el }}</p>
+
+			        		</div>
+
+			        		<div class="property__content__item">
+
+			        			<h1 class="property__content__title">{% trans 'Особенности оборудования' %}</h1>
+
+			        			<p class="property__content__description">{{ asic.description.protect }}</p>
+
+			        		</div>
+
+			        		<div class="property__content__item">
+
+			        			<h1 class="property__content__title">{% trans 'О производителе' %}</h1>
+
+			        			<p class="property__content__description">{{ asic.description.firm }}</p>
+
+			        		</div>
+
+			        	</div>
+
+			        </div>
+			        <div class="tab-pane tab__pane__property" data-tab="2">
+
+			        	<div class="flx__drctn">
+
+			        		<div class="mini__property">
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Производитель' %}</span><span>{{ asic.property.firm }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Модель' %}</span><span>{{ asic.property.model }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Криптовалюта' %}</span><span>{{ asic.property.crpt }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Хэшрейт' %}</span><span>{{ asic.property.hesh }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Алгоритм' %}</span><span>{{ asic.property.algo }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Энергопотребление' %}</span><span>{{ asic.property.electro }}</span></p>
+								</div>
+
+								<!--<div class="mini__property__item">
+									<p><span class="name__property">Энергоэфективность</span><span>{{ asic.property.elect_ef }}</span></p>
+								</div>-->
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Рабочая температура' %}</span><span>{{ asic.property.temp }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Источник питания' %}</span><span>{{ asic.property.power }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Охлаждение' %}</span><span>{{ asic.property.cold }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Размер' %}</span><span>{{ asic.property.size }}</span></p>
+								</div>
+
+								<div class="mini__property__item">
+									<p><span class="name__property">{% trans 'Уровень шума' %}</span><span>{{ asic.property.nose }}</span></p>
+								</div>
+
+							</div>
+
+
+							<div class="form__pred__zakaz">
+
+								<form method="post">
+
+									{% csrf_token %}
+
+									<input type="hidden" name="tabs_form" value="1">
+
+									<h1>{% trans 'Оставить заявку' %}</h1>
+
+									<div class="form__pred__zakaz__input">
+										{{ form.name }}
+									</div>
+
+									<div class="form__pred__zakaz__input">
+										{{ form.phone }}
+									</div>
+
+									<button type="submit">{% trans 'Отправить' %}</button>
+
+									<p>{% trans 'Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфиденциальности.' %}</p>
+								</form>
+
+							</div>
+
+			        	</div>
+
+			        </div>
+			        <div class="tab-pane" data-tab="3">
+
+			        	<div class="mail__tab">
+
+			        		<div class="left__main__mail__form">
+
+			        		<form method="post">
+
+								{% csrf_token %}
+
+								<input type="hidden" name="question_form" value="1">
+
+			        			<h1>{% trans 'Написать сообщение' %}</h1>
+
+			        			<div class="grid__form">
+
+			        				<div class="form__pred__zakaz__input">
+										{{ form2.name }}
+									</div>
+
+									<div class="form__pred__zakaz__input">
+										{{ form2.mail }}
+									</div>
+
+			        			</div>
+
+			        			<div class="grid__form">
+
+			        				<div class="form__pred__zakaz__input">
+										{{ form2.contact }}
+									</div>
+
+									<div class="form__pred__zakaz__input">
+										{{ form2.sub }}
+									</div>
+
+			        			</div>
+
+								{{ form2.message }}
+
+
+			        			<button type="submit">{% trans 'Отправить' %}</button>
+
+			        		</form>
+
+			        	</div>
+
+
+			        	<div class="form__pred__zakaz">
+
+								<form method="post">
+
+									{% csrf_token %}
+
+									<h1>{% trans 'Оставить заявку' %}</h1>
+
+									<div class="form__pred__zakaz__input">
+										{{ form.name }}
+									</div>
+
+									<div class="form__pred__zakaz__input">
+										{{ form.phone }}
+									</div>
+
+									<button type="submit">{% trans 'Отправить' %}</button>
+
+									<p>{% trans 'Нажимая кнопку Вы принимаете порядок обработки персональных данных описанный в нашей политике конфиденциальности' %}.</p>
+								</form>
+
+							</div>
+
+			        	</div>
+
+			        </div>
+			    </div>
+			</div>
+
+
+
+
+	</section>
+{% endblock %}
+
+
+{% block dop_script %}
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const phoneInput = document.getElementById('phone');
+
+            phoneInput.addEventListener('input', function(event) {
+                let cursorPosition = phoneInput.selectionStart;
+                let previousValue = phoneInput.value;
+
+                // Фильтруем только цифры
+                let digits = phoneInput.value.replace(/\D+/g, "");
+
+                // Учитываем, что вводим полный номер в формате 380XXXXXXXXX
+                if (digits.startsWith('380')) {
+                    digits = digits.slice(3);
+                }
+
+                let formattedValue = '+(380)-';
+                if (digits.length > 0) {
+                    formattedValue += digits.slice(0, 2);
+                }
+                if (digits.length > 2) {
+                    formattedValue += '-' + digits.slice(2, 5);
+                }
+                if (digits.length > 5) {
+                    formattedValue += '-' + digits.slice(5, 7);
+                }
+                if (digits.length > 7) {
+                    formattedValue += '-' + digits.slice(7, 9);
+                }
+
+                phoneInput.value = formattedValue;
+
+                // Вычисляем новую позицию курсора
+                const diffLength = formattedValue.length - previousValue.length;
+                cursorPosition += diffLength;
+
+                // Учтите, что формат '+(380)-' имеет длину 7 символов,
+                // поэтому мы разрешаем перемещение курсора только после этих 7 символов
+                cursorPosition = Math.max(cursorPosition, 7);
+
+                phoneInput.setSelectionRange(cursorPosition, cursorPosition);
+
+                // Обновляем стиль инпута
+                const isValid = digits.length === 9; // Здесь 9 цифр без кода страны '380'
+                updateInputStyle(phoneInput, isValid);
+            });
+
+            function updateInputStyle(input, isValid) {
+                input.style.borderColor = isValid ? '#0052cd' : 'red';
+            }
+        });
+    </script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+	        const orderButton = document.querySelector('.fast__order__btn__form');
+	        const orderButton2 = document.querySelector('.fast__order__btn__form_media');
+	        const closeButton = document.querySelector('.order__form__con__close__btn');
+	        const blur = document.querySelector('.blure__f__form');
+	        const orderForm = document.querySelector('.order__form__con');
+
+	        orderButton.addEventListener('click', function(event) {
+	            event.preventDefault();
+	            blur.style.display = 'block';
+	            orderForm.style.display = 'block';
+	        });
+
+	        orderButton2.addEventListener('click', function(event) {
+	            event.preventDefault();
+	            blur.style.display = 'block';
+	            orderForm.style.display = 'block';
+	        });
+
+	        closeButton.addEventListener('click', function() {
+	            blur.style.display = 'none';
+	            orderForm.style.display = 'none';
+	        });
+	    });
+	</script>
+
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  const incrementButton = document.querySelector('.quantity__as .increment');
+		  const decrementButton = document.querySelector('.quantity__as .decrement');
+		  const inputField = document.getElementById('quantity');
+		  const totalPriceInput = document.querySelector('.totality_price');
+		  const priceSpan = document.querySelector('.price__hidden');
+
+		  const pricePerUnit = parseInt(priceSpan.textContent); // Цена за единицу товара
+
+		  // Функция для форматирования числа с разделением тысяч и добавлением "USDT"
+		  function formatPrice(value) {
+		    return value.toLocaleString('ru-RU') + ' USDT';
+		  }
+
+		  // Функция для обновления итоговой цены
+		  function updateTotal() {
+		    const total = parseInt(inputField.value) * pricePerUnit;
+		    totalPriceInput.value = formatPrice(total);
+		  }
+
+		  incrementButton.addEventListener('click', function() {
+		    let currentValue = parseInt(inputField.value);
+		    if (currentValue < 999) {
+		      inputField.value = currentValue + 1;
+		      updateTotal();
+		    }
+		  });
+
+		  decrementButton.addEventListener('click', function() {
+		    let currentValue = parseInt(inputField.value);
+		    if (currentValue > 1) {
+		      inputField.value = currentValue - 1;
+		      updateTotal();
+		    }
+		  });
+
+		  // Начальное обновление итоговой цены
+		  updateTotal();
+		});
+	</script>
+{% endblock %}

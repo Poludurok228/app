@@ -1,0 +1,57 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'cat/css/style.css' %}">
+	<title>{% trans 'Спасибо за обращение' %}!</title>
+
+	<style>
+		body {
+			background: var(--cursor_color);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: calc(var(--index) * 1);
+			height: 100vh;
+		}
+
+		h1 {
+			color: #fff;
+			font-family: f6;
+		}
+
+		p {
+			color: rgba(255, 255, 255, .8);
+		}
+
+		a {
+			color: #fff;
+			display: flex;
+			gap: calc(var(--index) * .1);
+			align-items: center;
+		}
+
+		a svg {
+			width: 6px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>{% trans 'Спасибо за обращение' %}!</h1>
+	<p>{% trans 'С вами свяжется менеджер в ближайшее время, а пока можете продолжить выбирать товар' %}.</p>
+	<a href="{{ referer_url }}">
+		<svg width="" height="" viewBox="0 0 25 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M23.5 43L3 22.5C11.0057 14.4943 15.4943 10.0057 23.5 2" stroke="white" stroke-width="5" stroke-linecap="round"/>
+		</svg>
+
+		{% trans 'Назад' %}
+	</a>
+
+</body>
+</html>

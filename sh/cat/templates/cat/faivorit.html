@@ -1,0 +1,59 @@
+{% extends 'cat/base.html' %}
+{% load i18n %}
+
+{% block title %}Избранное{% endblock %}
+
+{% block favourite_count %}
+{{ favourites_count }}
+{% endblock %}
+
+{% block content %}
+    <section class="main__catalog__content__section">
+            <div class="cat__title">
+				<h1>{% trans 'Избранное' %}</h1>
+				<span>{% trans 'Вы выбрали ' %} {{ favourites_count }} {% trans 'модели' %}!</span>
+			</div>
+
+
+        <div class="section_fav">
+            <div class="asic__cards">
+
+					{% for f in favorites_asics %}
+
+						<div class="kard">
+
+						<div class="bg__container">
+
+							<img src="{{ f.main_img.url }}" alt="">
+
+							<a href="{{ f.get_absolute_url }}" class="kard__title">{{ f.title }}</a>
+
+							<div class="kard__property">
+
+								<p class="card__hesh">
+									<span>{% trans 'Хешрейт' %}</span>
+									<span>{{ f.property.hesh}}</span>
+								</p>
+
+								<p class="card__electro">
+									<span>{% trans 'Энергопотребление' %}</span>
+									<span>{{ f.power}} {% trans 'Вт' %}</span>
+								</p>
+
+							</div>
+
+						</div>
+
+
+						<div class="kard__order__con">
+							<span>{{ f.usdt}} USDT</span>
+							<a href="{{ f.get_absolute_url }}">{% trans 'Заказать' %}</a>
+						</div>
+
+					</div>
+                {% endfor %}
+        </div>
+
+    </section>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'cat/feedback.html' %}
+
+{% block action %}Заявка с Detail{% endblock %}
+
+{% block content %}
+<p>Страница с Асиком: {{ asic.title }}</p> <br>
+<p>Имя: {{ name }}</p> <br>
+<p>Цена асика: {{ asic.get_percent_price }}</p> <br>
+<p>Почта: {{ email }}</p> <br>
+<p>Телеграм: {{ telegram }}</p> <br>
+<p>Количество: {{ quantity }}</p> <br>
+<p>Общая цена: {{ price }}</p> <br>
+{% endblock %}
