@@ -1,0 +1,161 @@
+{% extends 'telweb/base.html' %}
+{% load humanize %}
+{% load i18n %}
+
+{% block title %}Payment{% endblock %}
+
+{% block alert %}
+<div class="alert_custom">{% trans 'Скопировано' %}!</div>
+{% endblock %}
+
+{% block content %}
+
+	<div class="payment__container">
+
+			{% if application.payed %}
+				<p>{% trans 'Спасибо что пользуетесь нашим сервисом, теперь вы можете отслеживать статус своего заказа на нашем сайте' %}.</p>
+			{% else %}
+				{% if fl %}
+					<h1 class="payment__container__title">{% trans 'Заявка' %} #{{ order_number }}</h1>
+				{% else %}
+					<h1 class="payment__container__title">{% trans 'Заявка не найдена, или истекло время на оплату' %}</h1>
+				{% endif%}
+
+
+				{% if fl %}
+					<div class="zayavka__con">
+
+					<div class="order__timer">
+						<span>{% trans 'Время для оплаты' %}</span>
+						<span id="countdown"></span>
+					</div>
+
+					<img src="{{ net.img.url }}" alt="" class="qr">
+
+					<p class="info_f_qr">
+						{% trans 'Сумма для оплаты' %}: <br> <span class="usdt__col"><span class="copy__for__sum">{{ total_price|intcomma }}</span> USDT</span> {% trans 'на адрес ниже' %}:
+					</p>
+
+					<p class="crypto__address">{{ net.wallet }}</p>
+
+					<p class="sett">{% trans 'Сеть' %}: {{ net.title }}</p>
+
+					<div class="copy__text__link">
+
+						<a class="address_wollet" href="#">
+
+							<svg width="" height="" viewBox="0 0 173 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M67.5 142.5V5.5H133L167.5 40.5V142.5H67.5Z" stroke="white" stroke-width="13"/>
+							<path d="M48 55H5V191.5H104.5V162.5" stroke="white" stroke-width="13"/>
+							</svg>
+
+							{% trans 'Скопировать адрес кошелька' %}
+						</a>
+
+						<a class="sum_transaction" href="#">
+
+							<svg width="" height="" viewBox="0 0 173 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M67.5 142.5V5.5H133L167.5 40.5V142.5H67.5Z" stroke="white" stroke-width="13"/>
+							<path d="M48 55H5V191.5H104.5V162.5" stroke="white" stroke-width="13"/>
+							</svg>
+
+							{% trans 'Скопировать сумму' %}
+						</a>
+
+					</div>
+
+
+					<p class="question__order">
+
+						<a href="https://t.me/CryptoTechUA">{% trans 'Появились вопросы' %}?</a>
+					</p>
+
+				</div>
+				{% else %}
+					<p style="color:#000;">{% trans 'Время на оплату вышло, попробуйте создать новую заявку в' %} <a style="all: unset; color:#0052cd;" href="{% url 'telegram:brand_cat' %}">{% trans 'каталоге' %}.</a></p>
+				{% endif%}
+			{% endif%}
+
+
+
+		</div>
+
+{% endblock %}
+
+
+{% block dop_scripts %}
+
+<script>
+		function copyText(text) {
+		    const textarea = document.createElement('textarea');
+		    textarea.value = text;
+		    document.body.appendChild(textarea);
+		    textarea.select();
+		    document.execCommand('copy');
+		    document.body.removeChild(textarea);
+		}
+
+		function showCustomAlert() {
+		    const alertCustom = document.querySelector('.alert_custom');
+		    alertCustom.classList.add('active_custom');
+		    setTimeout(() => {
+		        alertCustom.classList.remove('active_custom');
+		    }, 3000); // Убрать класс через 3 секунды (3000 миллисекунд)
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+		    const addressButton = document.querySelector('.address_wollet');
+		    const cryptoAddress = document.querySelector('.crypto__address');
+
+		    if (addressButton && cryptoAddress) {
+		        addressButton.addEventListener('click', function (event) {
+		            event.preventDefault();
+		            copyText(cryptoAddress.textContent);
+		            showCustomAlert(); // Показать кастомный алерт
+		        });
+		    }
+
+		    const sumButton = document.querySelector('.sum_transaction');
+		    const copyForSum = document.querySelector('.copy__for__sum');
+
+		    if (sumButton && copyForSum) {
+		        sumButton.addEventListener('click', function (event) {
+		            event.preventDefault();
+		            copyText(copyForSum.textContent);
+		            showCustomAlert(); // Показать кастомный алерт
+		        });
+		    }
+		});
+	</script>
+
+<script>
+       var expiryDate = new Date("{{ expiry_time|date:"c" }}").getTime();
+
+		// Функция обновления таймера каждую секунду
+		var countdownFunction = setInterval(function() {
+	    var now = new Date().getTime();
+	    var distance = expiryDate - now;
+
+	    // Расчёты для дней, часов, минут и секунд
+	    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	    // Общее количество часов включает часы, прошедшие в текущих сутках и полные сутки
+	    var totalHours = hours + (days * 24);
+
+	    // Вывод результатов в элемент с id="countdown"
+	    // Форматирование чисел для двухзначного представления с ведущими нулями
+	    document.getElementById("countdown").innerHTML =
+	        `${String(totalHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+	    // Если отсчёт закончен, напишите некоторый текст
+	    if (distance < 0) {
+	        clearInterval(countdownFunction);
+	        document.getElementById("countdown").innerHTML = "Ссылка истекла";
+	    }
+	}, 1000);
+    </script>
+
+{% endblock %}

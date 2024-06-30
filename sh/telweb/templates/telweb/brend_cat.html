@@ -1,0 +1,23 @@
+{% extends 'telweb/base.html' %}
+{% load i18n %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+        <div class="brand__detail__container">
+
+			<h1>{% trans 'Выберите производителя' %}</h1>
+
+			{% for b in brand %}
+				<a href="{{ b.get_absolute_url_telegram }}" class="brand__detail__item">
+					<img src="{{ b.svg.url }}" alt="">
+					<span>
+						<svg width="" height="" viewBox="0 0 88 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 10.5C34.603 35.103 73 73.5 73 73.5L10 136.5" stroke="white" stroke-width="20" stroke-linecap="round"/>
+						</svg>
+					</span>
+				</a>
+			{% endfor %}
+
+		</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'telweb/base.html' %}
+{% load humanize %}
+{% load i18n %}
+
+{% block title %}Home{% endblock %}
+
+{% block dop_content_telegram %}
+<div class="card">
+
+		<span class="card__count">{{ basket_item_count }}</span>
+
+		<a href="{% url 'telegram:basket' %}">
+			<svg width="" height="" viewBox="0 0 222 199" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="67.5" cy="180.5" r="18.5" fill="white"/>
+			<circle cx="180.5" cy="180.5" r="18.5" fill="white"/>
+			<path d="M8 8H26C29.6667 8 37.1 9.5 37.5 15.5C37.9 21.5 51.3333 90.6667 58 124.5C59.6667 129.833 66.1 140.5 78.5 140.5C90.9 140.5 156 140.5 187 140.5" stroke="white" stroke-width="16" stroke-linecap="round"/>
+			<path d="M42 20.5H210C212 20.3333 215.4 21.9 213 29.5C210.6 37.1 201 71 196.5 87C194.833 92.3333 188.9 103 178.5 103C168.1 103 91.8333 103 55 103" stroke="white" stroke-width="16" stroke-linecap="round"/>
+			</svg>
+		</a>
+	</div>
+{% endblock %}
+
+{% block content %}
+        <div class="asic__brand__container">
+
+			<h1>{% trans 'Асики' %} {{ brand.title }}<span>{{ asic_count }}</span></h1>
+
+
+			<div class="asic__brand__items__container">
+
+				{% for as in asic %}
+                    <div class="asic__item">
+
+                        <div class="image__block__asic__item">
+                            <img src="{{ as.main_img.url }}" alt="">
+                        </div>
+
+                        <div class="text__con__asic__item">
+
+                            <h2 class="title__asic__item">{{ as.title }}</h2>
+
+                            <h1 class="price__asic__item">{{ as.usdt|intcomma }} USDT</h1>
+
+                            <!--<p class="usdt__price">{{ as.usdt|intcomma }} USDT</p>-->
+
+                        </div>
+
+                        <a class="add__item" href="{% url 'telegram:add_to_basket' asic_id=as.id %}">{% trans 'Добавить' %}</a>
+
+                        <!--
+                        <div class="block__added__item">
+
+                            <a class="br" href="#">-</a>
+
+                            <span>1</span>
+
+                            <a class="bl" href="#">+</a>
+
+                        </div>
+                        -->
+
+                    </div>
+                {% endfor %}
+
+
+			</div>
+
+		</div>
+{% endblock %}

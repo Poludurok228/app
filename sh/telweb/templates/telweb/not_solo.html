@@ -1,0 +1,25 @@
+{% extends 'telweb/base.html' %}
+{% load i18n %}
+
+{% block title %}PayNotSolo{% endblock %}
+
+{% block content %}
+
+    <div class="continue__pay">
+        <p>{% trans 'Спасибо что воспользовались нашим сервисом' %}! <br> {% trans 'Номер вашего заказа' %}: <strong class="copy_place">#{{ order_number }}</strong></p>
+        <p style="margin: unset;" class="copy__text__link">
+            <a class="address_wollet_cop" href="#">
+
+                <svg width="" height="" viewBox="0 0 173 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M67.5 142.5V5.5H133L167.5 40.5V142.5H67.5Z" stroke="white" stroke-width="13"/>
+                <path d="M48 55H5V191.5H104.5V162.5" stroke="white" stroke-width="13"/>
+                </svg>
+
+                {% trans 'Скопировать номер заявки' %}
+            </a>
+        </p>
+        <p>{% trans 'Для продолжения покупки отправте номер заказа нашему менеджеру в Telegram' %}</p>
+        <a href="https://t.me/CryptoTechUA">{% trans 'Продолжить покупку' %}</a>
+    </div>
+
+{% endblock %}

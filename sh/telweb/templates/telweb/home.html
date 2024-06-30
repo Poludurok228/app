@@ -1,0 +1,22 @@
+{% extends 'telweb/base.html' %}
+{% load i18n %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+        <div class="main_link_container">
+
+			<a href="{% url 'telegram:brand_cat' %}" class="link__item">
+
+				<h1>{% trans 'Магазин' %}</h1>
+
+			</a>
+
+			<a href="https://t.me/CryptoTechUA" class="link__item">
+
+				<h1>{% trans 'Поддержка' %}</h1>
+
+			</a>
+
+		</div>
+{% endblock %}

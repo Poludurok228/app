@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'telweb/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'telweb/css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'telweb/css/dop.css' %}">
+	<title>{% block title %}{% endblock %}</title>
+	<style>
+		.language_sveech {
+			all: unset;
+			padding: 7px 7px;
+			background: rgba(0,0,0,0);
+			text-transform: uppercase;
+			border: 1px solid rgba(0,0,0,0.3);
+			border-radius: 3px;
+			font-size: 13px;
+			font-weight: normal;
+		}
+
+		.messages__telegram {
+			list-style: none;
+			margin-bottom: 20px;
+		}
+
+		.messages__telegram li {
+			margin-bottom: 15px;
+			color: red;
+		}
+
+		.continue__pay {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
+
+		.continue__pay a {
+			display: block;
+			padding: 15px;
+			text-align: center;
+			color: #fff;
+			background: #0052cd;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	{% block dop_content_telegram %}
+	{% endblock %}
+
+	<header>
+		<div class="hero__logo">
+				<svg width="" height="" viewBox="0 0 188 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M50.5 21.5V2.5H135.5V21.5H104.5V109H81.5L81 21.5H50.5Z" fill="#1b1b1b"/>
+				<path d="M184 4H145.5V13H170.5L131.5 91.5L139 98L184 4Z" fill="#1b1b1b"/>
+				<path d="M40.5 12.5V3.5H3.5L33.5 65L37 51L18 12.5H40.5Z" fill="#1b1b1b"/>
+				<path d="M76.5 132.5L62.5 126.5L94 192L124.5 129L112 132.5L94 168L76.5 132.5Z" fill="#1b1b1b"/>
+				<path d="M50.5 21.5V2.5H135.5V21.5H104.5V109H81.5L81 21.5H50.5Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M184 4H145.5V13H170.5L131.5 91.5L139 98L184 4Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M40.5 12.5V3.5H3.5L33.5 65L37 51L18 12.5H40.5Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M76.5 132.5L62.5 126.5L94 192L124.5 129L112 132.5L94 168L76.5 132.5Z" stroke="#1b1b1b" stroke-width="4" stroke-linecap="round"/>
+				<path d="M43 60C49.8 38.4 69.5 30 78.5 28.5V49.5C75.3 50.7 71.5 55 70 57C67.3333 59.5 62.4 67.9 64 81.5C65.6 95.1 76 102.5 81 104.5C82 105.167 86.8 106.7 98 107.5C109.2 108.3 117.667 100.5 120.5 96.5C122.833 98.8333 129 104.9 135 110.5C131.5 115 116 127 91.5 127.5C71.9 127.9 58.6667 117.333 54.5 112C47.8333 103.667 36.2 81.6 43 60Z" fill="#0052cd" stroke="#0052cd"/>
+				<path d="M107.5 46.5V27.5C120.207 29.0752 126.104 32.7514 135 43L120 56C116.146 50.996 113.547 48.7412 107.5 46.5Z" fill="#0052cd" stroke="#0052cd" stroke-linecap="round"/>
+				</svg>
+
+				<h1 style="display: flex; gap: 15px; align-items: end;"><a style="color:#000;" href="{% url 'telegram:home'  %}">CryptoTech</a> {% include 'includes/language_btn.html' %}</h1>
+			</div>
+
+	</header>
+
+	{% block alert %}
+	{% endblock %}
+
+	<main>
+
+		{% block content %}
+
+
+        {% endblock %}
+
+	</main>
+
+
+
+    {% block dop_scripts %}
+	<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const copyPlace = document.querySelector('.copy_place');
+    const copyLink = document.querySelector('.address_wollet_cop');
+
+    copyLink.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const textToCopy = copyPlace.innerText.trim();
+
+        const textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        document.body.appendChild(textarea);
+
+        textarea.select();
+        document.execCommand('copy');
+
+        document.body.removeChild(textarea);
+    });
+});
+</script>
+    {% endblock %}
+
+</body>
+</html>

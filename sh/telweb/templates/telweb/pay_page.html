@@ -1,0 +1,198 @@
+{% extends 'telweb/base.html' %}
+{% load humanize %}
+{% load i18n %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+       <div class="order__pay__container">
+
+			<h1 class="order__pay__title">{% trans 'Оплата' %}</h1>
+
+			<div class="main__order__pay__body">
+
+				<h2 class="order__number">{% trans 'Заказ' %} #{{ order_number }}</h2>
+
+				{% for item in basket_items %}
+
+					<div class="order__pay__item">
+
+							<div class="order__pay__item__left">
+
+							<img src="{{ item.asic.main_img.url }}" alt="">
+
+							<div class="order__pay__item__left__text">
+
+								<h2>{{ item.asic.title }}</h2>
+
+								<p class="asic__cart__hashrate">{% trans 'Хешрейт' %}: <span>{{ item.asic.property.hesh }}</span></p>
+
+								<p class="asic__cart__hashrate">{% trans 'Количество' %}: <span>{{ item.quantity }}</span></p>
+
+							</div>
+
+						</div>
+
+
+
+
+						<div class="order__pay__item__right">
+
+							<p class="order__price__rub">{{ item.asic.usdt|intcomma }} USDT</p>
+							<!--<p class="order__price__usdt">{{ item.asic.usdt|intcomma }} USDT</p>-->
+
+						</div>
+
+					</div>
+				{% endfor %}
+
+
+
+				<div class="main__price__cart__item">
+
+					<div class="main__price__cart__item__left">
+
+						<h2>{% trans 'Итого' %}:</h2>
+
+					</div>
+
+					<div class="main__price__cart__item__right">
+
+						<p class="order__price__rub">{{ total_order_price_usdt|intcomma }} USDT</p>
+						<!--<p class="order__price__usdt">{{ total_order_price_usdt|intcomma }} USDT</p>-->
+
+					</div>
+
+				</div>
+
+			</div>
+
+		   <a style="color: #0052cd; margin-bottom: 40px; display: block;" href="{% url 'telegram:basket' %}">{% trans 'Назад к корзине' %}</a>
+
+
+			<div class="form__order__pay">
+
+				{% if messages %}
+					<ul class="messages messages__telegram">
+						{% for message in messages %}
+							<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+
+				<form method="post">
+
+					{% csrf_token %}
+
+					<div class="form__item__block">
+
+						<h1 class="form__item__block__title">{% trans 'Выберите способ оплаты' %}</h1>
+
+						<div class="inputs__con">
+
+							<div class="inputs__con__item reverse__input">
+								<input type="radio" id='usdt_sam' name='payment_way' value='usdt_self'>
+								<label for="usdt_sam">USDT ({% trans 'oплатить самостоятельно' %})</label>
+							</div>
+
+							<div class="inputs__con__item reverse__input">
+								<input type="radio" id='usdt_ne_sam' name='payment_way' value='usdt_manager'>
+								<label for="usdt_ne_sam">USDT ({% trans 'oплатить с менеджером' %})</label>
+							</div>
+
+							<div class="inputs__con__item reverse__input">
+								<input type="radio" id='karta' name='payment_way' value='card'>
+								<label for="karta">{% trans 'На карту' %}</label>
+							</div>
+
+							<div class="inputs__con__item reverse__input">
+							  	<input type="radio" id="nal" name="payment_way" value='cash'>
+							  	<label for="nal">{% trans 'Наличными' %}</label>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="form__item__block">
+
+						<h1 class="form__item__block__title">{% trans 'Способ получения' %}</h1>
+
+						<div class="inputs__con">
+						  <div class="inputs__con__item reverse__input">
+							<input type="radio" id='v_office' name='get_way' value='office_pickup'>
+							<label for="v_office">{% trans 'Самовывоз со склада в Одессе' %} <p>{% trans 'Малиновский район, Базовая ул. (12:00 - 20:00)' %}</p></label>
+						  </div>
+
+						  <div class="inputs__con__item reverse__input">
+							<input type="radio" id='ne_v_office' name='get_way' value='delivery'>
+							<label for="ne_v_office">{% trans 'Доставка' %}</label>
+						  </div>
+
+						  <div class="inputs__con__dop__info">
+							<div class="inputs__con__item reverse__input">
+							  <input type="text" placeholder="{% trans 'Адрес' %}" name="delivery_address">
+							  <label>{% trans 'Адрес' %}</label>
+							</div>
+						  </div>
+						</div>
+
+					</div>
+
+					<div class="form__item__block">
+
+						<h1 class="form__item__block__title">{% trans 'Информация получателя' %}</h1>
+
+						<div class="inputs__con">
+
+							<div class="inputs__con__item reverse__input">
+							  <input placeholder="{% trans 'Ваше имя' %}" type="text" name="recipient_name">
+							  <label>{% trans 'Получатель' %}</label>
+							</div>
+
+							<div class="inputs__con__item reverse__input">
+							  <input placeholder="{% trans '+(380) 99 999-99-99' %}" type="text" name="phone" required>
+							  <label>{% trans 'Телефон' %}</label>
+							</div>
+
+							<div class="inputs__con__item reverse__input">
+							  <textarea placeholder="{% trans 'Напишите комментарий' %}" name="comment"></textarea>
+							  <label>{% trans 'Комментарий' %}</label>
+							</div>
+
+						</div>
+
+					</div>
+
+					<button style="display: block; width: 100%; border: unset;" type="submit" class="link__to__pay">{% trans 'Оплатить' %}</button>
+
+				</form>
+
+			</div>
+
+		</div>
+{% endblock %}
+
+
+{% block dop_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var radioNeVOFFICE = document.getElementById('ne_v_office');
+  var blockDopInfo = document.querySelector('.inputs__con__dop__info');
+
+  function toggleBlock() {
+    if(radioNeVOFFICE.checked) {
+      blockDopInfo.style.display = 'block';
+    } else {
+      blockDopInfo.style.display = 'none';
+    }
+  }
+
+  toggleBlock();
+
+  document.querySelectorAll('input[name="get_way"]').forEach(function(radio) {
+    radio.addEventListener('change', toggleBlock);
+  });
+});
+</script>
+{% endblock %}
