@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: f3;
+}
+
+
+:root {
+
+	--index: 1vh + 1vw;
+	--invers: -1;
+
+	--main_color: #1b1b1b;
+	--cursor_color: #0052cd;
+  --body_color: #E0E0FF;
+  --light__blue: linear-gradient(45deg, rgba(34,173,247,1) 0%, rgba(27,206,254,1) 100%);
+  --light__orange: linear-gradient(45deg, rgba(255,150,0,1) 0%, rgba(255,182,0,1) 100%);
+  --light__green: linear-gradient(45deg, rgba(107,201,104,1) 0%, rgba(137,201,89,1) 100%);
+  --light__yellow: linear-gradient(45deg, rgba(217,220,27,1) 0%, rgba(252,255,88,1) 100%);
+
+  --slide_color1: #1b1b1c;
+  --slide_color2: #0052cd;
+  --slide_color3: #99ffaf;
+  --slide_color4: #fcff58;
+  --slide_color5: #f1eee5;
+
+}
+
+
+*::selection {
+  background: var(--main_color);
+  color: #fff;
+}
+
+
+
+@font-face {
+  font-family: 'f3';
+  src: url('../fonts/3.woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'f6';
+  src: url('../fonts/6.woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background: var(--body_color);
+}
+
+a {
+  text-decoration: none;
+}
